@@ -1,0 +1,44 @@
+# ==== WordPress Core ====
+# File cấu hình chứa thông tin nhạy cảm (database, secret keys)
+wp-config.php
+
+# ==== Uploads ====
+# Thư mục uploads thường rất nặng và chứa file media của người dùng
+wp-content/uploads/
+
+# ==== Cache & Logs ====
+wp-content/debug.log
+wp-content/cache/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/backup-db/
+wp-content/backups/
+
+# ==== Plugins có thể tạo ra ====
+wp-content/upgrade/
+wp-content/mu-plugins/
+
+# ==== System Files ====
+.htaccess
+.htpasswd
+*.log
+error_log
+
+# ==== IDE & Editor ====
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ==== Dependencies (nếu có) ====
+node_modules/
+vendor/
+
+# ==== Environment ====
+.env
+.env.local
+.env.*.local
+
