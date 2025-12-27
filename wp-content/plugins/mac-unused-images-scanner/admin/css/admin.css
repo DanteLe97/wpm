@@ -1,0 +1,121 @@
+/**
+ * MAC Unused Images Scanner - Admin Styles
+ */
+
+.mac-uis-admin-page {
+    max-width: 1200px;
+}
+
+.mac-uis-actions {
+    margin: 20px 0;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.mac-uis-scan-form {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.mac-uis-manual-run {
+    margin: 10px 0 0 0;
+}
+
+.mac-uis-manual-run .description {
+    margin-left: 10px;
+    color: #666;
+    font-style: italic;
+}
+
+.mac-uis-status-box {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f0f0f1;
+    border-left: 4px solid #2271b1;
+    min-height: 20px;
+}
+
+.mac-uis-status-box p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.mac-uis-status-box strong {
+    color: #2271b1;
+}
+
+.mac-uis-results-form {
+    margin-top: 30px;
+}
+
+.mac-uis-bulk-actions {
+    margin: 15px 0;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+.mac-uis-bulk-actions select {
+    margin-right: 10px;
+    min-width: 200px;
+}
+
+.mac-uis-results-table {
+    margin-top: 15px;
+}
+
+.mac-uis-results-table .check-column {
+    width: 40px;
+    text-align: center;
+}
+
+.mac-uis-results-table .mac-uis-thumbnail {
+    width: 100px;
+}
+
+.mac-uis-results-table .mac-uis-thumbnail img {
+    max-width: 80px;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 2px;
+    background: #fff;
+}
+
+.mac-uis-results-table .mac-uis-filename {
+    font-weight: 600;
+    color: #2271b1;
+}
+
+.mac-uis-results-table .mac-uis-url {
+    max-width: 400px;
+    word-break: break-all;
+}
+
+.mac-uis-results-table .mac-uis-url a {
+    color: #2271b1;
+    text-decoration: none;
+}
+
+.mac-uis-results-table .mac-uis-url a:hover {
+    text-decoration: underline;
+}
+
+.mac-uis-results-table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+/* Loading state */
+.mac-uis-status-box.loading {
+    border-left-color: #f0b849;
+}
+
+.mac-uis-status-box.completed {
+    border-left-color: #00a32a;
+}
+
+.mac-uis-status-box.error {
+    border-left-color: #d63638;
+}
+

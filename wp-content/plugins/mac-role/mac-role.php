@@ -4,7 +4,7 @@
  * Plugin URI: https://macusaone.com
  * Description: Quản lý URL admin được phép truy cập theo Role/User với UI đơn giản.
  * Version: 1.0.0
- * Author: MAC Marketing
+ * Author: MAC USA One
  * Author URI: https://macusaone.com
  * Text Domain: mac-role
  * Domain Path: /languages

@@ -181,7 +181,9 @@ class Admin {
             'mac-menu' => array('file' => 'mac-menu/mac-menu.php'),
             'mac-log-viewer' => array('file' => 'mac-log-viewer/mac-log-viewer.php'),
             'mac-importer-demo' => array('file' => 'mac-importer-demo/mac-importer-demo.php'),
-            'mac-seasonal-effects' => array('file' => 'mac-seasonal-effects/mac-seasonal-effects.php')
+            'mac-seasonal-effects' => array('file' => 'mac-seasonal-effects/mac-seasonal-effects.php'),
+            'mac-interactive-tutorials' => array('file' => 'mac-interactive-tutorials/mac-interactive-tutorials.php'),
+            'mac-role' => array('file' => 'mac-role/mac-role.php')
         );
         
         if (isset($mac_core_addons[$addon_slug])) {
@@ -217,7 +219,9 @@ class Admin {
             'mac-menu' => array('file' => 'mac-menu/mac-menu.php'),
             'mac-log-viewer' => array('file' => 'mac-log-viewer/mac-log-viewer.php'),
             'mac-importer-demo' => array('file' => 'mac-importer-demo/mac-importer-demo.php'),
-            'mac-seasonal-effects' => array('file' => 'mac-seasonal-effects/mac-seasonal-effects.php')
+            'mac-seasonal-effects' => array('file' => 'mac-seasonal-effects/mac-seasonal-effects.php'),
+            'mac-interactive-tutorials' => array('file' => 'mac-interactive-tutorials/mac-interactive-tutorials.php'),
+            'mac-role' => array('file' => 'mac-role/mac-role.php')
         );
         
         if (isset($mac_core_addons[$addon_slug])) {

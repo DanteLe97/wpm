@@ -116,6 +116,20 @@ $mac_core_current_version = defined('MAC_CORE_VERSION') ? MAC_CORE_VERSION : ($m
                                 'slug' => 'mac-seasonal-effects',
                                 'file' => 'mac-seasonal-effects/mac-seasonal-effects.php',
                                 // GitHub functionality removed - using CRM only
+                            ),
+                            'mac-interactive-tutorials' => array(
+                                'name' => 'MAC Interactive Tutorials',
+                                'description' => 'Tạo tutorials trực tiếp trong WordPress admin',
+                                'slug' => 'mac-interactive-tutorials',
+                                'file' => 'mac-interactive-tutorials/mac-interactive-tutorials.php',
+                                // GitHub functionality removed - using CRM only
+                            ),
+                            'mac-role' => array(
+                                'name' => 'MAC Role URL Dashboard',
+                                'description' => 'Quản lý URL admin được phép truy cập theo Role/User với UI đơn giản.',
+                                'slug' => 'mac-role',
+                                'file' => 'mac-role/mac-role.php',
+                                // GitHub functionality removed - using CRM only
                             )
                         );
 
