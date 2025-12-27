@@ -1,0 +1,470 @@
+/* ==========================================================================
+   Template Library Admin CSS - Clean Version
+   ========================================================================== */
+
+/* Hide Default Elementor Columns */
+
+.column-taxonomy-elementor_library_category,
+#taxonomy-elementor_library_category,
+.column-date,
+#date {
+    display: none !important;
+}
+
+/* Template Library Admin List */
+.edit-php.post-type-elementor_library .wp-list-table {
+    font-size: 13px;
+}
+
+.edit-php.post-type-elementor_library .wp-list-table .column-template_id {
+    width: 80px;
+    text-align: center;
+}
+
+.edit-php.post-type-elementor_library .wp-list-table .column-template_id strong {
+    color: #d63638;
+    font-weight: bold;
+}
+
+.edit-php.post-type-elementor_library .wp-list-table .column-html2canvas_preview {
+    width: 220px;
+}
+
+.edit-php.post-type-elementor_library .wp-list-table td.column-html2canvas_preview {
+    min-height: 60px !important;
+    max-height: 250px !important;
+    vertical-align: top !important;
+    padding: 8px !important;
+    height: auto !important;
+}
+
+/* ==========================================================================
+   PREVIEW CONTROLS WRAPPER
+   ========================================================================== */
+
+.preview-controls-wrapper {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.preview-controls-wrapper:hover {
+    border-color: #f26212;
+    box-shadow: 0 6px 20px rgba(242, 98, 18, 0.1);
+    /* transform: translateY(-2px); */
+}
+
+.preview-controls-wrapper h4 {
+    margin: 0 0 15px 0 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.preview-controls-wrapper h4 .dashicons {
+    color: #f26212;
+    font-size: 18px;
+}
+
+/* ==========================================================================
+   PREVIEW BUTTONS
+   ========================================================================== */
+
+.refresh-previews-btn,
+.toggle-previews-btn {
+    font-size: 13px !important;
+    padding: 10px 16px !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    height: auto !important;
+    line-height: 1.4 !important;
+}
+
+.refresh-previews-btn {
+    background: #ffffff !important;
+    border-color: #dee2e6 !important;
+    color: #495057 !important;
+}
+
+.refresh-previews-btn:hover:not(:disabled) {
+    background: #f26212 !important;
+    border-color: #f26212 !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(242, 98, 18, 0.25) !important;
+}
+
+.refresh-previews-btn:active {
+    transform: translateY(0) !important;
+}
+
+.refresh-previews-btn:disabled {
+    opacity: 0.6 !important;
+    transform: none !important;
+    pointer-events: none !important;
+}
+
+.toggle-previews-btn {
+    background: linear-gradient(135deg, #f26212 0%, #ff7b47 100%) !important;
+    border-color: #f26212 !important;
+    color: white !important;
+    box-shadow: 0 3px 8px rgba(242, 98, 18, 0.2) !important;
+}
+
+.toggle-previews-btn:hover {
+    background: linear-gradient(135deg, #d94a0a 0%, #f26212 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(242, 98, 18, 0.3) !important;
+}
+
+.toggle-previews-btn.button-secondary {
+    background: linear-gradient(135deg, #6c757d 0%, #868e96 100%) !important;
+    border-color: #6c757d !important;
+}
+
+.toggle-previews-btn.button-secondary:hover {
+    background: linear-gradient(135deg, #5a6268 0%, #6c757d 100%) !important;
+}
+
+/* Status Text */
+#preview-status {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    padding: 8px 12px !important;
+    background: rgba(248, 249, 250, 0.8) !important;
+    border: 1px solid #e9ecef !important;
+    border-radius: 6px !important;
+    margin-left: 15px !important;
+    transition: all 0.3s ease !important;
+}
+
+/* ==========================================================================
+   TEMPLATE PREVIEW CONTAINERS
+   ========================================================================== */
+
+.template-preview-container {
+    position: relative;
+    width: 200px;
+    max-width: 200px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+.template-preview-container:not(.show-preview) {
+    background: #f8f9fa;
+    border: 1px dashed #ccc;
+}
+
+.template-preview-container:not(.show-preview)::before {
+    content: '👁️ Nhấn "Hiện Preview" để xem';
+    font-size: 11px;
+    color: #666;
+    text-align: center;
+    line-height: 1.3;
+    display: block;
+    width: 100%;
+}
+
+.template-preview-container .template-preview-image div {
+    padding: 15px;
+    text-align: center;
+    color: #666;
+    font-size: 11px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    line-height: 1.4;
+}
+
+.template-preview-container .template-preview-image div small {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+    font-size: 10px;
+}
+
+.template-preview-container.show-preview {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.template-preview-container.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.template-preview-container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 3px;
+}
+
+/* Hide previews by default */
+.template-preview-container:not(.show-preview) .template-preview-image,
+.template-preview-container:not(.show-preview) .template-preview-loading {
+    display: none !important;
+}
+
+/* Show previews when toggle is active */
+.template-preview-container.show-preview .template-preview-image {
+    display: block !important;
+}
+
+.template-preview-container.show-preview.loading .template-preview-loading {
+    display: block !important;
+}
+
+.template-preview-container.show-preview.loading .template-preview-image {
+    display: none !important;
+}
+
+/* ==========================================================================
+   TEMPLATE PREVIEW LOADING & IMAGES
+   ========================================================================== */
+
+.template-preview-loading {
+    padding: 20px;
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+    font-size: 12px;
+    background: linear-gradient(45deg, transparent 25%, rgba(242, 98, 18, 0.05) 25%, rgba(242, 98, 18, 0.05) 50%, transparent 50%, transparent 75%, rgba(242, 98, 18, 0.05) 75%);
+    background-size: 20px 20px;
+    animation: loadingStripes 1s linear infinite;
+    border-radius: 6px;
+}
+
+.template-preview-loading::after {
+    content: "...";
+    animation: dots 1.5s steps(5, end) infinite;
+}
+
+.template-preview-image {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: #f6f7f7;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #f26212 #f0f6fc;
+}
+
+.template-preview-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.template-preview-image img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.template-preview-image img:hover {
+    opacity: 0.9;
+    /* transform: scale(1.05); */
+}
+
+.template-preview-image::-webkit-scrollbar {
+    width: 4px;
+}
+
+.template-preview-image::-webkit-scrollbar-track {
+    background: #f0f6fc;
+    border-radius: 2px;
+}
+
+.template-preview-image::-webkit-scrollbar-thumb {
+    background: #f26212;
+    border-radius: 2px;
+}
+
+.template-preview-image::-webkit-scrollbar-thumb:hover {
+    background: #d94a0a;
+}
+
+/* ==========================================================================
+   TEMPLATE BADGES & DISPLAYS
+   ========================================================================== */
+
+/* Template ID Display */
+.template-id-display {
+    font-family: 'Courier New', monospace;
+    background: #f8f9fa;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+    font-size: 12px;
+    color: #495057;
+    font-weight: 600;
+}
+
+.column-template_id span {
+    background: #fff2cc;
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid #d69e2e;
+}
+
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(-15px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes loadingStripes {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 0; }
+}
+
+@keyframes dots {
+    0%, 20% {
+        color: rgba(0,0,0,0);
+        text-shadow:
+            .25em 0 0 rgba(0,0,0,0),
+            .5em 0 0 rgba(0,0,0,0);
+    }
+    40% {
+        color: #0073aa;
+        text-shadow:
+            .25em 0 0 rgba(0,0,0,0),
+            .5em 0 0 rgba(0,0,0,0);
+    }
+    60% {
+        text-shadow:
+            .25em 0 0 #0073aa,
+            .5em 0 0 rgba(0,0,0,0);
+    }
+    80%, 100% {
+        text-shadow:
+            .25em 0 0 #0073aa,
+            .5em 0 0 #0073aa;
+    }
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+/* ==========================================================================
+   STATE STYLES
+   ========================================================================== */
+
+.preview-success {
+    background: #d4edda !important;
+    border-color: #c3e6cb !important;
+    color: #155724 !important;
+}
+
+.preview-error {
+    background: #f8d7da !important;
+    border-color: #f5c6cb !important;
+    color: #721c24 !important;
+}
+
+.preview-controls-wrapper.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.preview-controls-wrapper.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f26212;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .preview-controls-wrapper {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .preview-controls-wrapper h4 {
+        font-size: 14px !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .refresh-previews-btn,
+    .toggle-previews-btn {
+        font-size: 12px !important;
+        padding: 8px 12px !important;
+        flex: 1;
+    }
+    
+    #preview-status {
+        margin-left: 0 !important;
+        margin-top: 10px !important;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .preview-controls-wrapper div[style*="display: flex"] {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+    
+    .template-preview-image {
+        max-width: 150px;
+    }
+
+    .edit-php.post-type-elementor_library .wp-list-table .column-template_id {
+        width: 60px;
+    }
+
+    .edit-php.post-type-elementor_library .wp-list-table .column-html2canvas_preview {
+        width: 180px;
+    }
+} 

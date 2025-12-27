@@ -1,0 +1,57 @@
+.jet-login {
+	label {
+		display: block;
+	}
+	p {
+		margin: 0;
+		padding: 0;
+	}
+
+	.rtl & {
+		text-align: right;
+	}
+
+	.login-password__wrapper {
+		position: relative;
+
+		.password-visibility {
+			&__icon {
+				display: none;
+				position: absolute;
+				top: calc(50% - 10px);
+				right: 10px;
+				width: 20px;
+				height: 20px;
+				font-size: 20px;
+				line-height: 20px;
+				cursor: pointer;
+
+				svg {
+					display: block;
+					fill: currentColor;
+				}
+
+				&.show {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.jet-login-lost-password-link {
+	display: inline-block;
+	margin-top: 15px;
+}
+
+.jet-login-message {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	color: #f00;
+}
+
+.jet-login-lost-password-link + .jet-login-message {
+	a {
+		display: none;
+	}
+}

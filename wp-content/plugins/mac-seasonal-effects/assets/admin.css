@@ -1,0 +1,87 @@
+.mac-seasonal-effects-settings {
+  max-width: 1200px;
+}
+
+.mac-seasonal-effects-settings .form-table th {
+  width: 200px;
+}
+
+.mac-seasonal-effects-settings .image-preview {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  background: #fff;
+}
+
+.mac-seasonal-effects-settings .mac-upload-image {
+  margin-left: 10px;
+}
+
+.mac-seasonal-effects-settings h2 {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.mac-seasonal-effects-settings h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Loading Spinner */
+.mac-loading-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #2271b1;
+  border-radius: 50%;
+  animation: mac-spin 1s linear infinite;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+@keyframes mac-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.mac-loading-overlay {
+  position: relative;
+  min-height: 50px;
+}
+
+.mac-loading-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.mac-loading-overlay::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #2271b1;
+  border-radius: 50%;
+  animation: mac-spin 1s linear infinite;
+  z-index: 11;
+}
+
+.mac-ajax-loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+

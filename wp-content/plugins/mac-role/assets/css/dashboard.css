@@ -1,0 +1,247 @@
+/**
+ * User dashboard styles - Optimized for elderly users
+ */
+
+/* Hide admin bar for non-admin users */
+body:not(.wp-admin) #wpadminbar,
+body.admin-bar:not(.wp-admin) #wpadminbar {
+	display: none !important;
+}
+
+/* Adjust body padding when admin bar is hidden */
+body:not(.wp-admin) {
+	padding-top: 0 !important;
+}
+
+.rud-dashboard-wrap {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.rud-dashboard-title {
+	font-size: 32px;
+	font-weight: bold;
+	color: #23282d;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.rud-empty-state {
+	text-align: center;
+	padding: 60px 20px;
+	background: #fff;
+	border: 1px solid #ccd0d4;
+	border-radius: 8px;
+}
+
+.rud-tiles-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 25px;
+	margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+	.rud-tiles-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.rud-tile {
+	background: #fff;
+	border: 2px solid #ccd0d4;
+	border-radius: 12px;
+	padding: 30px;
+	text-align: center;
+	box-shadow: 0 2px 4px rgba(0,0,0,.1);
+	transition: all 0.3s ease;
+	cursor: pointer;
+	min-height: 250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.rud-tile:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 12px rgba(0,0,0,.2);
+	border-color: #ff5c02;
+}
+
+.rud-tile:focus {
+	outline: 3px solid #ff5c02;
+	outline-offset: 3px;
+}
+
+.rud-tile:active {
+	transform: translateY(-2px);
+}
+
+.rud-tile-grouped {
+	min-height: auto;
+}
+
+.rud-tile-submenu {
+	width: 100%;
+}
+
+.rud-submenu-link {
+	transition: background 0.2s, transform 0.1s;
+}
+
+.rud-submenu-link:hover {
+	background: #e8f4f8 !important;
+	transform: translateX(3px);
+}
+
+.rud-submenu-link:active {
+	transform: translateX(1px);
+}
+
+.rud-tile-icon {
+	font-size: 64px;
+	margin-bottom: 20px;
+	line-height: 1;
+}
+
+.rud-tile-title {
+	font-size: 22px;
+	font-weight: bold;
+	color: #23282d;
+	margin: 0 0 15px 0;
+	line-height: 1.3;
+}
+
+.rud-tile-description {
+	font-size: 18px;
+	color: #666;
+	margin: 0 0 20px 0;
+	line-height: 1.5;
+}
+
+.rud-open-button {
+	font-size: 18px;
+	font-weight: bold;
+	padding: 14px 28px;
+	background: #ff5c02;
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background 0.2s;
+	min-width: 120px;
+	min-height: 50px;
+}
+
+.rud-open-button:hover {
+	background: #135e96;
+}
+
+.rud-open-button:focus {
+	outline: 3px solid #ff5c02;
+	outline-offset: 2px;
+}
+
+.rud-open-button:active {
+	background: #0a4b78;
+}
+
+/* Iframe modal */
+#rud-iframe-modal {
+	display: none;
+}
+
+#rud-iframe-modal.active {
+	display: block;
+}
+
+#rud-close-iframe {
+	font-size: 32px;
+	color: #666;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 10px 20px;
+	line-height: 1;
+}
+
+#rud-close-iframe:hover {
+	color: #000;
+}
+
+#rud-iframe-content {
+	width: 100%;
+	height: calc(100% - 60px);
+	border: none;
+	margin-top: 20px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+	.rud-tile {
+		border-width: 3px;
+	}
+	
+	.rud-tile-title {
+		font-weight: 900;
+	}
+	
+	.rud-open-button {
+		border: 2px solid #000;
+	}
+}
+
+/* Large text support */
+@media (prefers-reduced-motion: reduce) {
+	.rud-tile,
+	.rud-open-button {
+		transition: none;
+	}
+}
+
+/* Print styles */
+@media print {
+	.rud-tiles-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	
+	.rud-open-button {
+		display: none;
+	}
+}
+
+
+.rud-non-admin #wpbody-content {
+	width: calc(100% - 50px);
+}
+@media (max-width: 768px) {
+	.wp-toolbar:has(.rud-non-admin) {
+		padding-top: 0 !important;
+	}
+	.rud-non-admin #wpbody-content {
+		padding-left: 0 !important;
+	}
+	.rud-non-admin #wpbody-content {
+		width: calc(100% - 10px);
+	}
+	.rud-tiles-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+	.rud-tile {
+		padding: 15px;
+	}
+	@media (max-width: 480px) {
+		.rud-tiles-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.wp-toolbar:has(.rud-non-admin) #wpbody {
+			padding-top: 0 !important;
+		}
+		.rud-dashboard-wrap {
+			padding: 0;
+		}
+	}
+}

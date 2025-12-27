@@ -1,0 +1,129 @@
+<div class="jet-engine-edit-page__fields">
+	<div class="cx-vui-collapse__heading">
+		<h3 class="cx-vui-subtitle"><?php _e( 'Mac Menu Categories Query', 'mac-menu' ); ?></h3>
+	</div>
+	<div class="cx-vui-panel">
+		<!-- Parents Only Option -->
+		<cx-vui-switcher
+			label="<?php _e( 'Parent Categories Only', 'mac-menu' ); ?>"
+			description="<?php _e( 'Only get categories with parents_category = 0', 'mac-menu' ); ?>"
+			:wrapper-css="[ 'equalwidth' ]"
+			name="query_parents_only"
+			v-model="query.parents_only"
+		></cx-vui-switcher>
+
+		<!-- Parent ID Filter -->
+		<cx-vui-input
+			label="<?php _e( 'Get Children of Parent ID', 'mac-menu' ); ?>"
+			description="<?php _e( 'Leave empty to get all or enter parent category ID', 'mac-menu' ); ?>"
+			:wrapper-css="[ 'equalwidth' ]"
+			size="fullwidth"
+			type="number"
+			name="query_parent_id"
+			v-model="query.parent_id"
+		></cx-vui-input>
+
+		<!-- Search by ID (Priority) -->
+		<cx-vui-input
+			label="<?php _e( 'Search by ID', 'mac-menu' ); ?>"
+			description="<?php _e( 'Enter ID or multiple IDs (comma-separated). Priority: if ID exists, name search will be ignored', 'mac-menu' ); ?>"
+			:wrapper-css="[ 'equalwidth' ]"
+			size="fullwidth"
+			name="query_search_ids"
+			v-model="query.search_ids"
+			@input="handleSearchIdsChange"
+		></cx-vui-input>
+
+		<!-- Search by Name -->
+		<cx-vui-input
+			label="<?php _e( 'Search by Name', 'mac-menu' ); ?>"
+			description="<?php _e( 'Enter name or multiple names (comma-separated). Only works if no ID is provided', 'mac-menu' ); ?>"
+			:wrapper-css="[ 'equalwidth' ]"
+			size="fullwidth"
+			name="query_search"
+			v-model="query.search"
+			@input="handleSearchChange"
+		></cx-vui-input>
+
+		<!-- Order By -->
+		<cx-vui-select
+			label="<?php _e( 'Order By', 'mac-menu' ); ?>"
+			description="<?php _e( 'Select field to sort by', 'mac-menu' ); ?>"
+			:wrapper-css="[ 'equalwidth' ]"
+			size="fullwidth"
+			name="query_order_by"
+			:options-list="[
+				{
+					value: 'order',
+					label: '<?php _e( 'Order (Default)', 'mac-menu' ); ?>'
+				},
+				{
+					value: 'id',
+					label: '<?php _e( 'ID', 'mac-menu' ); ?>'
+				},
+				{
+					value: 'category_name',
+					label: '<?php _e( 'Category Name', 'mac-menu' ); ?>'
+				}
+			]"
+			v-model="query.order_by"
+		></cx-vui-select>
+
+		<!-- Order Direction -->
+		<cx-vui-select
+			label="<?php _e( 'Sort Order', 'mac-menu' ); ?>"
+			description="<?php _e( 'Select sort order', 'mac-menu' ); ?>"
+			:wrapper-css="[ 'equalwidth' ]"
+			size="fullwidth"
+			name="query_order"
+			:options-list="[
+				{
+					value: 'ASC',
+					label: '<?php _e( 'Ascending (ASC)', 'mac-menu' ); ?>'
+				},
+				{
+					value: 'DESC',
+					label: '<?php _e( 'Descending (DESC)', 'mac-menu' ); ?>'
+				}
+			]"
+			v-model="query.order"
+		></cx-vui-select>
+
+		<!-- Limit -->
+		<cx-vui-input
+			label="<?php _e( 'Limit', 'mac-menu' ); ?>"
+			description="<?php _e( 'Maximum number of items (leave empty = unlimited)', 'mac-menu' ); ?>"
+			:wrapper-css="[ 'equalwidth' ]"
+			size="fullwidth"
+			type="number"
+			name="query_limit"
+			v-model="query.limit"
+		></cx-vui-input>
+
+		<!-- Offset -->
+		<cx-vui-input
+			label="<?php _e( 'Offset', 'mac-menu' ); ?>"
+			description="<?php _e( 'Skip number of items from the beginning', 'mac-menu' ); ?>"
+			:wrapper-css="[ 'equalwidth' ]"
+			size="fullwidth"
+			type="number"
+			name="query_offset"
+			v-model="query.offset"
+		></cx-vui-input>
+
+		<!-- Preview Note -->
+		<cx-vui-component-wrapper
+			:wrapper-css="[ 'fullwidth-control' ]"
+		>
+			<div class="cx-vui-inner-panel notice">
+				<p><strong><?php _e( 'Note:', 'mac-menu' ); ?></strong></p>
+				<ul>
+					<li><?php _e( '• This query will fetch data from Mac Menu Categories table', 'mac-menu' ); ?></li>
+					<li><?php _e( '• Can be used in JetTabs, JetListing, and other widgets', 'mac-menu' ); ?></li>
+					<li><?php _e( '• Mac Menu Dynamic Tags will work with "Current Category" option', 'mac-menu' ); ?></li>
+				</ul>
+			</div>
+		</cx-vui-component-wrapper>
+
+	</div>
+</div>

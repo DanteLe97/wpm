@@ -1,0 +1,189 @@
+{
+  "name": "Halloween Style 2",
+  "version": "1.0.0",
+  "description": "Custom cursor, falling pumpkins, bat swarm, click effects, and button decorations",
+  "customizable": {
+    "images": {
+      "cursor_default": {
+        "label": "Default Cursor Image",
+        "default": "animations/halloween/style-2/images/download-1.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      },
+      "cursor_pointer": {
+        "label": "Pointer Cursor Image",
+        "default": "animations/halloween/style-2/images/download-2.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      },
+      "pumpkin_tree": {
+        "label": "Pumpkin Tree Image (Bottom Left)",
+        "default": "animations/halloween/style-2/images/trick-treat3-img.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      },
+      "floating_ghost": {
+        "label": "Floating Ghost Image (Right Side)",
+        "default": "animations/halloween/style-2/images/category1-img.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      },
+      "bat_image": {
+        "label": "Bat Image (Swarm)",
+        "default": "animations/halloween/style-2/images/download-3.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      },
+      "falling_pumpkin_1": {
+        "label": "Falling Pumpkin Image 1",
+        "default": "animations/halloween/style-2/images/trick-treat3-img.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      },
+      "falling_pumpkin_2": {
+        "label": "Falling Pumpkin Image 2",
+        "default": "animations/halloween/style-2/images/trick-treat5-img.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      },
+      "falling_pumpkin_3": {
+        "label": "Falling Pumpkin Image 3",
+        "default": "animations/halloween/style-2/images/home1-img.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      },
+      "falling_pumpkin_4": {
+        "label": "Falling Pumpkin Image 4",
+        "default": "animations/halloween/style-2/images/home2-img.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      },
+      "falling_pumpkin_5": {
+        "label": "Falling Pumpkin Image 5",
+        "default": "animations/halloween/style-2/images/about-img.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      },
+      "falling_pumpkin_6": {
+        "label": "Falling Pumpkin Image 6",
+        "default": "animations/halloween/style-2/images/category1-img.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      },
+      "falling_pumpkin_7": {
+        "label": "Falling Pumpkin Image 7",
+        "default": "animations/halloween/style-2/images/category2-img.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      },
+      "falling_pumpkin_8": {
+        "label": "Falling Pumpkin Image 8",
+        "default": "animations/halloween/style-2/images/category3-img.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      },
+      "click_creature_1": {
+        "label": "Click Creature Image 1",
+        "default": "animations/halloween/style-2/images/category1-img.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      },
+      "click_creature_2": {
+        "label": "Click Creature Image 2",
+        "default": "animations/halloween/style-2/images/category2-img.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      },
+      "click_creature_3": {
+        "label": "Click Creature Image 3",
+        "default": "animations/halloween/style-2/images/category3-img.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      },
+      "click_creature_4": {
+        "label": "Click Creature Image 4",
+        "default": "animations/halloween/style-2/images/home2-img.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      },
+      "click_creature_5": {
+        "label": "Click Creature Image 5",
+        "default": "animations/halloween/style-2/images/home1-img.png",
+        "type": "image",
+        "accept": ["png", "jpg", "jpeg", "svg", "webp"]
+      }
+    },
+    "settings": {
+      "pumpkin_count": {
+        "label": "Number of Falling Pumpkins",
+        "default": 3,
+        "type": "number",
+        "min": 1,
+        "max": 10
+      },
+      "pumpkin_spawn_interval_min": {
+        "label": "Pumpkin Spawn Interval Min (ms)",
+        "default": 200,
+        "type": "number",
+        "min": 100,
+        "max": 2000
+      },
+      "pumpkin_spawn_interval_max": {
+        "label": "Pumpkin Spawn Interval Max (ms)",
+        "default": 800,
+        "type": "number",
+        "min": 200,
+        "max": 5000
+      },
+      "pumpkin_fall_duration_min": {
+        "label": "Pumpkin Fall Duration Min (seconds)",
+        "default": 4,
+        "type": "number",
+        "min": 2,
+        "max": 20
+      },
+      "pumpkin_fall_duration_max": {
+        "label": "Pumpkin Fall Duration Max (seconds)",
+        "default": 12,
+        "type": "number",
+        "min": 4,
+        "max": 30
+      },
+      "bat_swarm_count": {
+        "label": "Bat Swarm Count",
+        "default": 90,
+        "type": "number",
+        "min": 10,
+        "max": 200
+      },
+      "click_creature_count": {
+        "label": "Click Creature Count",
+        "default": 12,
+        "type": "number",
+        "min": 5,
+        "max": 30
+      },
+      "enable_custom_cursor": {
+        "label": "Enable Custom Cursor",
+        "default": true,
+        "type": "checkbox"
+      },
+      "enable_fixed_decorations": {
+        "label": "Enable Fixed Decorations",
+        "default": true,
+        "type": "checkbox"
+      },
+      "enable_bat_swarm": {
+        "label": "Enable Bat Swarm on Page Load",
+        "default": true,
+        "type": "checkbox"
+      },
+      "enable_click_effects": {
+        "label": "Enable Click Burst Effects",
+        "default": true,
+        "type": "checkbox"
+      }
+    }
+  }
+}
+

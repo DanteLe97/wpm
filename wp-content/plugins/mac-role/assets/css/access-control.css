@@ -1,0 +1,50 @@
+/**
+ * Access Control Styles - Hide admin menu for non-admin users
+ */
+
+/* Hide admin menu sidebar - must be on all pages */
+#adminmenuwrap,
+#adminmenuback {
+	display: none !important;
+	width: 0 !important;
+	visibility: hidden !important;
+	position: absolute !important;
+	left: -9999px !important;
+}
+
+/* Hide admin menu items completely */
+#adminmenu,
+#adminmenu li,
+#adminmenu .wp-menu-arrow {
+	display: none !important;
+}
+
+/* Adjust content area */
+#wpcontent,
+#wpbody-content {
+	margin-left: 0 !important;
+	padding-left: 20px !important;
+}
+
+.folded #wpcontent,
+.folded #wpbody-content {
+	margin-left: 0 !important;
+	padding-left: 20px !important;
+}
+
+#wpbody {
+	margin-left: 0 !important;
+}
+
+/* Back to dashboard button */
+.rud-back-dashboard {
+	font-size: 16px !important;
+	padding: 12px 24px !important;
+	text-decoration: none !important;
+	white-space: nowrap;
+}
+
+.rud-back-dashboard:hover {
+	opacity: 0.9;
+}
+

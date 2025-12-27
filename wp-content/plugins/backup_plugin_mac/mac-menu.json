@@ -1,0 +1,197 @@
+{
+    "success": true,
+    "shop_info": {
+        "name": null,
+        "parent_id": 0
+    },
+    "categories": [
+        {
+            "category_name": "massage",
+            "slug_category": "massage",
+            "category_description": "Massage Therapy has confirmed therapeutic value beyond the benefits it provides to sore muscles. Massage has been proven to increase circulation, improve mental alertness and strengthen the immune system.",
+            "price": "",
+            "featured_img": "",
+            "parents_category": 0,
+            "order": 0,
+            "group_repeater": [],
+            "is_table": 0,
+            "is_hidden": 0,
+            "data_table": "",
+            "category_inside": 1,
+            "category_inside_order": "new"
+        },
+        {
+            "category_name": "Swedish Massage",
+            "slug_category": "swedish-massage",
+            "category_description": "Our most relaxing massage utilizes a flowing, therapeutic touch to help minimize and relieve stress.",
+            "price": "",
+            "featured_img": "",
+            "parents_category": 1,
+            "order": 1,
+            "group_repeater": [
+                {
+                    "name": "30 mins",
+                    "featured_img": "",
+                    "description": "",
+                    "fullwidth": "0",
+                    "price-list": "$65",
+                    "position": 1
+                },
+                {
+                    "name": "60 mins",
+                    "featured_img": "",
+                    "description": "",
+                    "fullwidth": "0",
+                    "price-list": "$95",
+                    "position": 2
+                },
+                {
+                    "name": "90 mins",
+                    "featured_img": "",
+                    "description": "",
+                    "fullwidth": "0",
+                    "price-list": "$135",
+                    "position": 3
+                }
+            ],
+            "is_table": 0,
+            "is_hidden": 0,
+            "data_table": "",
+            "category_inside": 1,
+            "category_inside_order": "new"
+        },
+        {
+            "category_name": "Prenatal Massage",
+            "slug_category": "prenatal-massage",
+            "category_description": "Our prenatal massage bed is tailored specifically to the needs of pregnant women and their changing bodies. This massage relaxes tense muscles, eases sore spots, and improves circulation and mobility.",
+            "price": "",
+            "featured_img": "",
+            "parents_category": 1,
+            "order": 2,
+            "group_repeater": [
+                {
+                    "name": "60 mins",
+                    "featured_img": "",
+                    "description": "",
+                    "fullwidth": "0",
+                    "price-list": "$95",
+                    "position": 1
+                }
+            ],
+            "is_table": 0,
+            "is_hidden": 0,
+            "data_table": "",
+            "category_inside": 1,
+            "category_inside_order": "new"
+        },
+        {
+            "category_name": "Deep Tissue Massage",
+            "slug_category": "deep-tissue-massage",
+            "category_description": "Slow, intense, detailed movement and firm pressure to relieve severe tensions, stress and chronic pain.",
+            "price": "",
+            "featured_img": "",
+            "parents_category": 1,
+            "order": 4,
+            "group_repeater": [
+                {
+                    "name": "30 mins",
+                    "featured_img": "",
+                    "description": "",
+                    "fullwidth": "0",
+                    "price-list": "$85",
+                    "position": 1
+                },
+                {
+                    "name": "60 mins",
+                    "featured_img": "",
+                    "description": "",
+                    "fullwidth": "0",
+                    "price-list": "$130",
+                    "position": 2
+                },
+                {
+                    "name": "90 mins",
+                    "featured_img": "",
+                    "description": "",
+                    "fullwidth": "0",
+                    "price-list": "$180",
+                    "position": 3
+                }
+            ],
+            "is_table": 0,
+            "is_hidden": 0,
+            "data_table": "",
+            "category_inside": 1,
+            "category_inside_order": "new"
+        },
+        {
+            "category_name": "Cloud 9 Couples Massage",
+            "slug_category": "cloud-9-couples-massage",
+            "category_description": "Couples enjoy a 60 or 90-minute massage together.\nUsing a modality of their choice.",
+            "price": "",
+            "featured_img": "",
+            "parents_category": 1,
+            "order": 8,
+            "group_repeater": [
+                {
+                    "name": "Swedish 60 mins",
+                    "featured_img": "",
+                    "description": "",
+                    "fullwidth": "0",
+                    "price-list": "$190",
+                    "position": 1
+                },
+                {
+                    "name": "Swedish 90 mins",
+                    "featured_img": "",
+                    "description": "",
+                    "fullwidth": "0",
+                    "price-list": "$270",
+                    "position": 2
+                },
+                {
+                    "name": "Synergy 60 mins",
+                    "featured_img": "",
+                    "description": "",
+                    "fullwidth": "0",
+                    "price-list": "$240",
+                    "position": 3
+                },
+                {
+                    "name": "Synergy 90 mins",
+                    "featured_img": "",
+                    "description": "",
+                    "fullwidth": "0",
+                    "price-list": "$320",
+                    "position": 4
+                },
+                {
+                    "name": "Deep Tissue 60 min",
+                    "featured_img": "",
+                    "description": "",
+                    "fullwidth": "0",
+                    "price-list": "$260",
+                    "position": 5
+                },
+                {
+                    "name": "Deep Tissue 90 min",
+                    "featured_img": "",
+                    "description": "",
+                    "fullwidth": "0",
+                    "price-list": "$360",
+                    "position": 6
+                }
+            ],
+            "is_table": 0,
+            "is_hidden": 0,
+            "data_table": "",
+            "category_inside": 1,
+            "category_inside_order": "new"
+        }
+    ],
+    "summary": {
+        "total_categories": 5,
+        "total_items": 15,
+        "processing_time": "1.2s"
+    }
+}

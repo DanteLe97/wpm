@@ -1,0 +1,222 @@
+/**
+ * Frontend Widget CSS
+ */
+
+#mac-tutorial-widget-container {
+    position: fixed;
+    z-index: 999999;
+}
+
+.mac-tutorial-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 400px;
+    max-width: calc(100vw - 40px);
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+    z-index: 999999;
+}
+
+.mac-tutorial-widget__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #f6f7f7;
+    border-radius: 8px 8px 0 0;
+    cursor: move;
+}
+
+.mac-tutorial-widget__header:hover {
+    background: #e5e5e5;
+}
+
+.mac-tutorial-widget__title {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.mac-tutorial-widget__actions {
+    display: flex;
+    gap: 5px;
+}
+
+.mac-tutorial-widget__actions button {
+    background: transparent;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    color: #50575e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    transition: all 0.2s;
+}
+
+.mac-tutorial-widget__actions button:hover {
+    background: #dcdcde;
+    color: #1d2327;
+}
+
+.mac-tutorial-widget__actions button svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.mac-tutorial-widget__content {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.mac-tutorial-widget__step-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #1d2327;
+}
+
+.mac-step-description {
+    margin-bottom: 15px;
+    color: #50575e;
+    line-height: 1.6;
+}
+
+.mac-step-description p {
+    margin: 0 0 10px 0;
+}
+
+.mac-step-hint {
+    background: #f0f6fc;
+    border-left: 3px solid #2271b1;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #50575e;
+}
+
+.mac-step-hint code {
+    background: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+    color: #2271b1;
+}
+
+.mac-tutorial-widget__progress {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.mac-progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e5e5e5;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.mac-progress-fill {
+    height: 100%;
+    background: #2271b1;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.mac-progress-text {
+    font-size: 12px;
+    color: #646970;
+    text-align: center;
+}
+
+.mac-tutorial-widget__footer {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    border-top: 1px solid #e5e5e5;
+    background: #f6f7f7;
+    border-radius: 0 0 8px 8px;
+}
+
+.mac-tutorial-widget__footer button {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #2271b1;
+    background: #fff;
+    color: #2271b1;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.mac-tutorial-widget__footer button:hover:not(:disabled) {
+    background: #2271b1;
+    color: #fff;
+}
+
+.mac-tutorial-widget__footer button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.mac-tutorial-widget__footer .mac-btn-next {
+    background: #2271b1;
+    color: #fff;
+}
+
+.mac-tutorial-widget__footer .mac-btn-next:hover:not(:disabled) {
+    background: #135e96;
+}
+
+.mac-tutorial-paused {
+    opacity: 0.7;
+}
+
+.mac-tutorial-complete {
+    text-align: center;
+    padding: 20px;
+}
+
+.mac-tutorial-complete h3 {
+    margin: 0 0 15px 0;
+    font-size: 24px;
+    color: #2271b1;
+}
+
+.mac-tutorial-complete p {
+    margin: 0 0 20px 0;
+    color: #50575e;
+}
+
+.mac-tutorial-highlight {
+    position: relative;
+    outline: 3px solid #2271b1 !important;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(34, 113, 177, 0.2) !important;
+    z-index: 999998;
+    transition: all 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .mac-tutorial-widget {
+        width: calc(100vw - 20px);
+        right: 10px;
+        bottom: 10px;
+    }
+}
+

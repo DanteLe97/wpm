@@ -1,0 +1,44 @@
+{
+  "name": "Thanksgiving Style 1",
+  "version": "1.0.0",
+  "description": "Lottie animations for Thanksgiving celebration",
+  "customizable": {
+    "settings": {
+      "lottie_left_url": {
+        "label": "Left Lottie Animation URL",
+        "default": "https://lottie.host/dd5ca33b-939d-4ea0-a026-1a4af4b4b163/qfGfCxpQEx.lottie",
+        "type": "text"
+      },
+      "lottie_right_url": {
+        "label": "Right Lottie Animation URL",
+        "default": "https://lottie.host/347c66ca-d2a9-4c9e-9d08-f3cc86da6888/towAqDkFp2.lottie",
+        "type": "text"
+      },
+      "lottie_size": {
+        "label": "Lottie Size (px)",
+        "default": 220,
+        "type": "number",
+        "min": 100,
+        "max": 500
+      },
+      "lottie_size_mobile": {
+        "label": "Lottie Size Mobile (px)",
+        "default": 150,
+        "type": "number",
+        "min": 50,
+        "max": 300
+      },
+      "enable_left": {
+        "label": "Enable Left Animation",
+        "default": true,
+        "type": "checkbox"
+      },
+      "enable_right": {
+        "label": "Enable Right Animation",
+        "default": true,
+        "type": "checkbox"
+      }
+    }
+  }
+}
+

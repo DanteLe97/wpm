@@ -1,0 +1,32 @@
+.halloween-ghost, .halloween-pumpkin {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  animation: floaty 6s ease-in-out infinite;
+}
+
+.halloween-ghost {
+  bottom: 20%;
+  left: 5%;
+  width: 80px;
+}
+
+.halloween-pumpkin {
+  bottom: 10%;
+  right: 5%;
+  width: 100px;
+  animation-delay: 3s;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Customizable colors via CSS variables */
+.mac-animation-container {
+  --anim-primary-color: #FF6B35;
+  --anim-secondary-color: #F7931E;
+  --anim-bg-color: #000000;
+}
+

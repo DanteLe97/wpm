@@ -1,0 +1,33 @@
+.lottie-bottom-left {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: var(--lottie-size, 220px);
+  height: var(--lottie-size, 220px);
+  pointer-events: none; /* để không ảnh hưởng click UI */
+  z-index: 9999;
+}
+
+.lottie-bottom-right {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: var(--lottie-size, 220px);
+  height: var(--lottie-size, 220px);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .lottie-bottom-left {
+    width: var(--lottie-size-mobile, 150px);
+    height: var(--lottie-size-mobile, 150px);
+  }
+
+  .lottie-bottom-right {
+    width: var(--lottie-size-mobile, 150px);
+    height: var(--lottie-size-mobile, 150px);
+  }
+}
+

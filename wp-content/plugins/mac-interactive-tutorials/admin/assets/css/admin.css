@@ -1,0 +1,114 @@
+/**
+ * Admin CSS for Step Builder
+ */
+
+#mac-tutorial-steps-builder {
+    margin: 20px 0;
+}
+
+.mac-steps-list {
+    margin-bottom: 20px;
+}
+
+.mac-step-item {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    padding: 15px;
+    position: relative;
+}
+
+.mac-step-item:hover {
+    border-color: #8c8f94;
+}
+
+.mac-step-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    cursor: move;
+}
+
+.mac-step-header:hover {
+    background: #f6f7f7;
+    margin: -15px -15px 15px -15px;
+    padding: 15px;
+    border-radius: 4px 4px 0 0;
+}
+
+.mac-step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: #2271b1;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.mac-step-title {
+    flex: 1;
+    margin: 0 !important;
+}
+
+.mac-remove-step {
+    flex-shrink: 0;
+}
+
+.mac-step-content {
+    padding-left: 40px;
+}
+
+.mac-step-content p {
+    margin-bottom: 15px;
+}
+
+.mac-step-content label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.mac-step-content .description {
+    display: block;
+    margin-top: 5px;
+    color: #646970;
+    font-style: italic;
+    font-size: 13px;
+}
+
+.mac-step-time {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.mac-step-time p {
+    margin: 0;
+}
+
+.mac-add-step {
+    margin-top: 10px;
+}
+
+/* Sortable helper */
+.ui-sortable-helper {
+    opacity: 0.8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ui-sortable-placeholder {
+    border: 2px dashed #ccd0d4;
+    background: #f6f7f7;
+    height: 100px;
+    margin-bottom: 15px;
+    visibility: visible !important;
+}
+

@@ -1,0 +1,18 @@
+.jet-logo {
+	display: flex;
+	&__link {
+		display: inline-flex;
+		.jet-logo-display-block & {
+			flex-direction: column;
+			display: block;
+		}
+	}
+
+	// Types
+	&.jet-logo-display-block {
+		&.jet-logo-type-both,
+		&.jet-logo-type-image {
+			display: block;
+		}
+	}
+}

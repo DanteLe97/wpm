@@ -1,0 +1,40 @@
+{
+    "name": "Minimal Kit",
+    "title": "Minimal Kit",
+    "description": "Minimal template kit with complete site settings",
+    "author": "mac-admin",
+    "version": "2.0",
+    "elementor_version": "3.29.0",
+    "created": "2025-06-30 14:30:00",
+    "thumbnail": false,
+    "site": "https://themesifichub.macusaone.com",
+    "site-settings": [
+        "global-colors",
+        "global-typography",
+        "theme-style-typography",
+        "theme-style-buttons",
+        "theme-style-images",
+        "theme-style-form-fields",
+        "settings-background",
+        "settings-layout",
+        "settings-lightbox",
+        "settings-page-transitions",
+        "settings-custom-css",
+        "hello-settings-header",
+        "hello-settings-footer"
+    ],
+    "plugins": [
+        {
+            "name": "Elementor",
+            "plugin": "elementor/elementor",
+            "pluginUri": "https://elementor.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash",
+            "version": "3.29.0"
+        }
+    ],
+    "content": {},
+    "wp-content": {
+        "post": [],
+        "page": [],
+        "nav_menu_item": []
+    }
+} 

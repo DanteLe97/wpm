@@ -1,0 +1,379 @@
+.mac-core-dashboard { margin-top: 20px; }
+.mac-core-grid-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px; }
+.mac-core-grid-item { min-height: 200px; display: flex; flex-direction: column; }
+.mac-core-full-width { grid-column: 1 / -1; }
+@media (max-width: 768px) { .mac-core-grid-row { grid-template-columns: 1fr; gap: 15px; } .mac-core-grid-item { min-height: auto; } }
+.key-domain-wrap form label { display:block; margin-bottom:10px; }
+.key-domain-wrap form button { margin-top:15px; display:block; background-color:#0073aa !important; color:#fff; border:none !important; padding:7px 25px !important; border-radius:5px; font-weight:400; font-size:13px; text-transform:uppercase; letter-spacing:1.2px; cursor:pointer; }
+.key-domain-wrap form input[type="text"] { width:100%; max-width:400px; padding:8px 12px; border:1px solid #ddd; border-radius:4px; font-size:14px; }
+#kvp-result { margin-top:10px; font-weight:bold; }
+.mac-core-dashboard-section { background:#fff; padding:20px; border:1px solid #e1e1e1; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); transition: box-shadow .3s ease; }
+.mac-core-dashboard-section:hover { box-shadow:0 4px 8px rgba(0,0,0,0.15); }
+.mac-core-dashboard-section h2 { margin-top:0; margin-bottom:15px; color:#23282d; font-size:18px; border-bottom:2px solid #0073aa; padding-bottom:8px; }
+.mac-core-form-container { background:#f8f9fa; padding:15px; border-radius:6px; border:1px solid #e9ecef; flex-grow:1; }
+.mac-core-form-container h3 { margin-top:0; margin-bottom:15px; color:#495057; font-size:16px; }
+.mac-core-info-grid { display:flex; gap:15px; margin-top:15px; }
+.mac-core-info-item { display:flex; align-items:center; gap:10px; }
+.mac-core-info-item strong { color:#23282d; font-size:14px; }
+.mac-core-info-item span { color:#666; font-size:13px; }
+.mac-core-version { color:#0073aa !important; font-weight:bold; }
+.mac-core-crm-status { display:flex; gap:15px; margin-top:15px; }
+.mac-core-status-item { display:flex; align-items:center; gap:10px; }
+.mac-core-notice { margin-top:15px; padding:12px 15px; border-radius:4px; border-left:4px solid; }
+.mac-core-notice-warning { background:#fff3cd; border-left-color:#ffc107; color:#856404; }
+.mac-core-notice-success { background:#d4edda; border-left-color:#28a745; color:#155724; }
+.mac-core-dashboard-section table { margin-top:15px; border-collapse:collapse; width:100%; }
+.mac-core-dashboard-section table td { padding:12px 15px; border-bottom:1px solid #e9ecef; }
+.mac-core-dashboard-section table tr:last-child td { border-bottom:none; }
+.mac-core-dashboard-section table tr:hover { background:#f8f9fa; }
+/* Add-ons styles */
+.mac-core-addons-wrap { margin-top:20px; }
+.mac-core-addons-section { background:#fff; padding:20px; margin-bottom:20px; border:1px solid #e1e1e1; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.05); }
+.mac-core-addon-cards { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:20px; margin-top:20px; }
+.mac-core-addon-card { border:1px solid #e5e7eb; border-radius:10px; padding:16px; background:#fff; transition:all .2s ease; display:flex; flex-direction:column; }
+.mac-core-addon-card.horizontal { flex-direction:row; align-items:flex-start; gap:14px; }
+.mac-core-addon-card:hover { box-shadow:0 2px 8px rgba(0,0,0,.08); }
+.mac-core-addon-logo { width:48px; height:48px; background:#f97316; color:#fff; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; font-weight:700; }
+.mac-core-addon-body { flex:1; }
+.mac-core-addon-title { margin:0 0 6px 0; }
+.mac-core-addon-desc { color:#666; margin:0 0 10px 0; }
+.badge-version { display:inline-block; padding:2px 8px; border-radius:6px; font-size:12px; font-weight:700; background:#e5f7e9; color:#0a7a2a; }
+.badge-version.is-missing { background:#fdecea; color:#b71c1c; }
+.badge-version.has-update { background:#fff7e6; color:#8a5300; }
+.up-to-date-text { color:#6b7280; font-size:12px; margin-right:8px; }
+.mac-core-addon-actions { display:flex; gap:10px; margin-top:8px; flex-direction:row; flex-wrap:wrap; justify-content:flex-end; }
+.mac-core-addon-actions-wrap { width:50%; }
+.mac-core-dashboard-section-wrap { display:flex; flex-direction:row; gap:20px; }
+.mac-core-dashboard-section-right { width:500px; }
+.mac-core-dashboard-section-left { flex:1; }
+.mac-core-actions { margin-top:15px; }
+.mac-core-dashboard-section-right h2:not(:first-child) { margin-top:45px; }
+.key-domain-wrap { margin-top:15px; }
+.mac-core-addon-status-line { margin-top:7px; }
+.mac-core-status-active { padding:3px 8px; border-radius:6px; }
+.mac-core-wrap {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.mac-core-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.mac-core-header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #23282d;
+}
+
+.mac-core-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.mac-core-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.mac-core-card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #23282d;
+}
+
+.mac-license-form {
+    max-width: 500px;
+}
+
+.mac-license-form input[type="text"] {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.mac-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #0073aa;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: background 0.3s ease;
+}
+
+.mac-button:hover {
+    background: #005177;
+}
+
+.mac-button.mac-button-success {
+    background: #46b450;
+}
+
+.mac-button.mac-button-success:hover {
+    background: #3a9e43;
+}
+
+.mac-status {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.mac-status.success {
+    background: #f0f8f0;
+    border: 1px solid #46b450;
+    color: #46b450;
+}
+
+.mac-status.error {
+    background: #fef7f7;
+    border: 1px solid #dc3232;
+    color: #dc3232;
+}
+
+/* Plugin installation states */
+.mac-core-addon-card.installing {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.mac-core-addon-card.installing::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #0073aa;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.mac-core-addon-card.installed {
+    border-color: #46b450;
+    background-color: #f0f8f0;
+}
+
+.mac-core-install-plugin:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.mac-plugin-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.mac-plugin-info {
+    flex: 1;
+}
+
+.mac-plugin-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+}
+
+.mac-plugin-info p {
+    margin: 0;
+    color: #666;
+}
+
+.mac-plugin-actions {
+    margin-left: 20px;
+}
+
+.mac-dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.mac-stat-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.mac-stat-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.mac-stat-card .stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #23282d;
+}
+
+/* MAC Core Admin Styles */
+
+/* Dashboard */
+.mac-core-dashboard {
+    margin-top: 20px;
+}
+
+.mac-core-dashboard-section {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.mac-core-dashboard-section h2 {
+    margin-top: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Status Labels */
+.mac-core-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.mac-core-status-active {
+    background: #dff0d8;
+    color: #3c763d;
+}
+
+.mac-core-status-inactive {
+    background: #f2dede;
+    color: #a94442;
+}
+
+.mac-core-status-invalid {
+    background: #fcf8e3;
+    color: #8a6d3b;
+}
+
+.mac-core-status-installed {
+    background: #d9edf7;
+    color: #31708f;
+}
+
+/* Plugin Cards */
+.mac-core-plugin-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.mac-core-plugin-card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.mac-core-plugin-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.mac-core-plugin-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.mac-core-plugin-actions {
+    margin-top: 20px;
+}
+
+/* Forms */
+.mac-core-form-wrap {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.mac-core-form-wrap .form-table th {
+    width: 200px;
+}
+
+/* Settings */
+.mac-core-settings-section {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.mac-core-settings-section h2 {
+    margin-top: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.mac-core-settings-section .widefat th {
+    width: 200px;
+}
+
+/* License Keys */
+.mac-core-license-key {
+    font-family: monospace;
+    background: #f7f7f7;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.mac-core-no-license {
+    color: #a94442;
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+    .mac-core-form-wrap .form-table th {
+        width: auto;
+    }
+
+    .mac-core-settings-section .widefat th {
+        width: auto;
+    }
+
+    .mac-core-plugin-cards {
+        grid-template-columns: 1fr;
+    }
+}

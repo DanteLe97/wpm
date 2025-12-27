@@ -1,0 +1,65 @@
+{
+  "name": "Noel Style 1",
+  "version": "1.0.0",
+  "description": "Falling snowflakes animation",
+  "customizable": {
+    "settings": {
+      "snowflake_count": {
+        "label": "Number of Snowflakes",
+        "default": 30,
+        "type": "number",
+        "min": 1,
+        "max": 50
+      },
+      "snowflake_emoji": {
+        "label": "Snowflake Emoji 1",
+        "default": "❅",
+        "type": "text"
+      },
+      "snowflake_emoji_2": {
+        "label": "Snowflake Emoji 2 (Optional)",
+        "default": "❆",
+        "type": "text"
+      },
+      "snowflake_emoji_3": {
+        "label": "Snowflake Emoji 3 (Optional)",
+        "default": "",
+        "type": "text"
+      },
+      "snowflake_color": {
+        "label": "Snowflake Color",
+        "default": "#ffffff",
+        "type": "color"
+      },
+      "snowflake_size": {
+        "label": "Snowflake Size (px)",
+        "default": 16,
+        "type": "number",
+        "min": 10,
+        "max": 50
+      },
+      "fall_duration": {
+        "label": "Fall Duration (seconds)",
+        "default": 10,
+        "type": "number",
+        "min": 5,
+        "max": 30
+      },
+      "shake_duration": {
+        "label": "Shake Duration (seconds)",
+        "default": 3,
+        "type": "number",
+        "min": 1,
+        "max": 10
+      },
+      "shake_distance": {
+        "label": "Shake Distance (px)",
+        "default": 80,
+        "type": "number",
+        "min": 20,
+        "max": 200
+      }
+    }
+  }
+}
+

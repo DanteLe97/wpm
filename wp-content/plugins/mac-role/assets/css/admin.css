@@ -1,0 +1,354 @@
+/**
+ * Admin styles for Role URL Dashboard
+ */
+
+.rud-admin-wrap {
+	max-width: 1400px;
+}
+
+.rud-page-title {
+	font-size: 28px;
+	margin-bottom: 20px;
+}
+
+.rud-filters {
+	background: #fff;
+	padding: 15px;
+	margin: 20px 0;
+	border: 1px solid #ccd0d4;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.rud-bulk-actions {
+	background: #fff;
+	padding: 15px;
+	margin: 20px 0;
+	border: 1px solid #ccd0d4;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.rud-mappings-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 20px;
+	margin-top: 20px;
+}
+
+.rud-mapping-card {
+	background: #fff;
+	border: 1px solid #ccd0d4;
+	border-radius: 8px;
+	padding: 20px;
+	box-shadow: 0 1px 3px rgba(0,0,0,.1);
+	transition: transform 0.2s, box-shadow 0.2s;
+	position: relative;
+}
+
+.rud-mapping-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 6px rgba(0,0,0,.15);
+}
+
+.rud-mapping-card.inactive {
+	opacity: 0.6;
+}
+
+.rud-bulk-checkbox {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 20px;
+	height: 20px;
+}
+
+.rud-card-content {
+	margin-top: 10px;
+}
+
+.rud-card-icon {
+	font-size: 50px;
+	margin-left: -10px;
+    margin-bottom: 40px;
+}
+
+.rud-card-title {
+	font-size: 20px;
+	font-weight: bold;
+	margin: 0 0 10px 0;
+	color: #23282d;
+}
+
+.rud-card-meta {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: #666;
+}
+
+.rud-status {
+	padding: 4px 8px;
+	border-radius: 4px;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.rud-status.active {
+	background: #d4edda;
+	color: #155724;
+}
+
+.rud-status.inactive {
+	background: #f8d7da;
+	color: #721c24;
+}
+
+.rud-card-url {
+	margin: 10px 0;
+	padding: 8px;
+	background: #f5f5f5;
+	border-radius: 4px;
+	font-size: 12px;
+	word-break: break-all;
+}
+
+.rud-card-url code {
+	background: none;
+	padding: 0;
+	font-size: 12px;
+}
+
+.rud-card-description {
+	font-size: 14px;
+	color: #666;
+	margin: 10px 0;
+	line-height: 1.5;
+}
+
+.rud-card-actions {
+	margin-top: 15px;
+	display: flex;
+	gap: 10px;
+}
+
+.rud-edit-form {
+	background: #fff;
+	padding: 20px;
+	border: 1px solid #ccd0d4;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	max-width: 800px;
+}
+
+.rud-edit-form .form-table th {
+	font-size: 16px;
+	font-weight: bold;
+	padding: 15px 10px 15px 0;
+	width: 200px;
+}
+
+.rud-edit-form .form-table td {
+	padding: 15px 10px;
+}
+
+.rud-edit-form input[type="text"],
+.rud-edit-form input[type="number"],
+.rud-edit-form select,
+.rud-edit-form textarea {
+	font-size: 16px;
+	padding: 8px;
+}
+
+.rud-edit-form .required {
+	color: #dc3232;
+}
+
+/* Accessibility improvements */
+.rud-mapping-card:focus-within {
+	outline: 2px solid #ff5c02;
+	outline-offset: 2px;
+}
+
+.rud-delete-link {
+	color: #b32d2e !important;
+}
+
+.rud-delete-link:hover {
+	color: #dc3232 !important;
+}
+
+/* Combobox Styles - Single field with dropdown and autocomplete */
+.rud-combobox-wrapper {
+	position: relative;
+}
+
+.rud-combobox-wrapper input[type="text"] {
+	border: 1px solid #8c8f94;
+	border-radius: 4px;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.rud-combobox-wrapper input[type="text"]:focus {
+	border-color: #ff5c02;
+	box-shadow: 0 0 0 1px #ff5c02;
+	outline: none;
+}
+
+.rud-dropdown-toggle {
+	transition: color 0.15s ease-in-out;
+}
+
+.rud-dropdown-toggle:hover {
+	color: #ff5c02 !important;
+}
+
+.rud-dropdown-menu {
+	background: #fff;
+}
+
+.rud-dropdown-item:hover {
+	background: #f0f6fc !important;
+}
+
+/* jQuery UI Autocomplete customization */
+.ui-autocomplete {
+	max-height: 300px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 9999 !important;
+	background: #fff;
+	border: 1px solid #8c8f94;
+	border-radius: 4px;
+	box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+.ui-autocomplete .ui-menu-item {
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.ui-autocomplete .ui-menu-item:last-child {
+	border-bottom: none;
+}
+
+.ui-autocomplete .ui-menu-item-wrapper {
+	padding: 10px 15px;
+	cursor: pointer;
+	display: block;
+	transition: background-color 0.15s ease-in-out;
+}
+
+.ui-autocomplete .ui-menu-item-wrapper:hover,
+.ui-autocomplete .ui-menu-item-wrapper.ui-state-active {
+	background-color: #f0f6fc;
+	border: none;
+	margin: 0;
+}
+
+.ui-autocomplete .ui-menu-item-wrapper div {
+	font-size: 14px;
+	color: #2c3338;
+}
+
+.ui-autocomplete .ui-menu-item-wrapper div strong {
+	color: #ff5c02;
+	font-weight: 600;
+}
+
+.rud-url-field {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+.rud-url-field .rud-url-selector-wrapper {
+	flex: 1;
+}
+
+/* Default Links Styles */
+.rud-default-links-section {
+	background: #f9f9f9;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 20px;
+	margin: 20px 0;
+}
+
+.rud-default-link-card {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 15px;
+	position: relative;
+	transition: box-shadow 0.2s;
+}
+
+.rud-default-link-card:hover {
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Toggle Switch Styles */
+.rud-toggle-switch {
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 20px;
+}
+
+.rud-toggle-switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.rud-toggle-slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	transition: .4s;
+	border-radius: 20px;
+}
+
+.rud-toggle-slider:before {
+	position: absolute;
+	content: "";
+	height: 14px;
+	width: 14px;
+	left: 3px;
+	bottom: 3px;
+	background-color: white;
+	transition: .4s;
+	border-radius: 50%;
+}
+
+.rud-toggle-switch input:checked + .rud-toggle-slider {
+	background-color: #ff5c02;
+}
+
+.rud-toggle-switch input:checked + .rud-toggle-slider:before {
+	transform: translateX(20px);
+}
+
+.rud-toggle-switch input:disabled + .rud-toggle-slider {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+/* Default Link Badge */
+.rud-default-badge {
+	position: absolute;
+	top: 10px;
+	right: 35px;
+	background: #ff5c02;
+	color: #fff;
+	padding: 2px 8px;
+	border-radius: 3px;
+	font-size: 11px;
+	font-weight: bold;
+	z-index: 1;
+}

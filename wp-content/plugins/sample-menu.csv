@@ -1,0 +1,62 @@
+id,category_name,category_description,price,featured_img,parents_category,is_hidden,is_table,table_heading,item_list_name,item_list_price,item_list_description,item_list_fw,item_list_img,item_list_position,category_inside,category_inside_order
+1,massage,"Massage Therapy has confirmed therapeutic value beyond the benefits it provides to sore muscles. Massage has been proven to increase circulation, improve mental alertness and strengthen the immune system.",,,0,0,0,,,,,,,,1,new
+2,"Swedish Massage","Our most relaxing massage utilizes a flowing, therapeutic touch to help minimize and relieve stress.",,,1,0,0,,"30 mins",$65,,0,,1,1,new,2
+,,,,,,,,,"60 mins",$95,,0,,2,,,3,
+,,,,,,,,,"90 mins",$135,,0,,3,,,4,
+3,"Prenatal Massage","Our prenatal massage bed is tailored specifically to the needs of pregnant women and their changing bodies. This massage relaxes tense muscles, eases sore spots, and improves circulation and mobility.",,,1,0,0,,"60 mins",$95,,0,,1,1,new,3
+4,"Soothing Warm Stone Massage","You are lulled into harmony and balance during this unique therapy, which incorporates the use of warm stones with a relaxing and relieving Swedish massage.",,,1,0,0,,"75 mins",$130,,0,,1,1,new,4
+5,"Deep Tissue Massage","Slow, intense, detailed movement and firm pressure to relieve severe tensions, stress and chronic pain.",,,1,0,0,,"30 mins",$85,,0,,1,1,new,5
+,,,,,,,,,"60 mins",$130,,0,,2,,,6,
+,,,,,,,,,"90 mins",$180,,0,,3,,,7,
+6,"Reiki Massage","An energy healing technique that promotes relaxation and reduces stress and anxiety through gentle touch. The technician uses their hands to deliver energy, improving the flow and balance of your energy to support healing.",,,1,0,0,,"60 mins",$95,,0,,1,1,new,6
+7,"Reiki massage combines healing energy with our massage",,,,1,0,0,,"90 mins",$135,,0,,1,1,new,7
+8,"Synergy Massage","Our most popular massage. A combination of deep tissue, Aromatherapy, Swedish techniques, and hot towels.",,,1,0,0,,"60 mins",$120,,0,,1,1,new,8
+,,,,,,,,,"90 mins",$160,,0,,2,,,9,
+9,"Cloud 9 Couples Massage","Couples enjoy a 60 or 90-minute massage together.
+Using a modality of their choice.
+",,,1,0,0,,"Swedish 60 mins",$190,,0,,1,1,new,9
+,,,,,,,,,"Swedish 90 mins",$270,,0,,2,,,10,
+,,,,,,,,,"Synergy 60 mins",$240,,0,,3,,,11,
+,,,,,,,,,"Synergy 90 mins",$320,,0,,4,,,12,
+,,,,,,,,,"Deep Tissue 60 min",$260,,0,,5,,,13,
+,,,,,,,,,"Deep Tissue 90 min",$360,,0,,6,,,14,
+10,"Massage Add-ons",,,,1,0,0,,Aromatherapy,$10,,0,,1,1,new,10
+,,,,,,,,,"Warm Scalp & Face Massage",$15,,0,,2,,,11,
+,,,,,,,,,"Leg and Foot Scrub",$15,,0,,3,,,12,
+,,,,,,,,,"CBD Oil",$20,,0,,4,,,13,
+,,,,,,,,,Cupping,$30,,0,,5,,,14,
+11,"customized jan marini facial all skin types","It is possible to have healthier skin and reduce the signs of aging! Our collection of facial treatments combines some of the finest natural ingredients with true anti-aging cosmetics.",,,0,0,0,,,,,,,,1,new
+12,"Customized Jan Marini Facial (All Skin Types)","This accelerated facial treatment incorporates two effective topical exfoliants. The combination of 40% glycolic acid and proteolytic enzymes safely intensifies the resurfacing action and provides measurable results for virtually any skin type. It offers skin-refining effects for greater smoothness and hydration, assisting in minimizing the appearance of fine lines and wrinkles, acne, sun damage, and hyperpigmentation.",,,11,0,0,,"60 mins",$110,,0,,1,1,new,12
+13,"Microdermabrasion and Jan Marini Resurfacing (All Skin Types)","The Microdermabrasion Resurfacing treatment combines the benefits of microdermabrasion with intense hydration and skin.",,,11,0,0,,"60 mins",$140,,0,,1,1,new,13
+14,"Ultimate Jan Marini Facial","A combination of JM products customized for your skin's particular needs. Followed by a collagen mask to enhance hydration, Celluma LED light therapy, and a foot and calf treatment.",,,11,0,0,,"90 mins",$180,,0,,1,1,new,14
+15,"Cloud 9 Signature Facial","Enjoy soothing attention dedicated to helping you achieve a healthier complexion. Your skin is analyzed, cleansed, polished, and pampered with treatment masques for your skin's specific needs.",,,11,0,0,,"60 mins",$95,,0,,1,1,new,15
+16,"Cloud 9 Glow Facial","This is our signature facial kick up a notch. We incorporate a professional exfoliation (enzyme peel) tailored to your individual needs. Let your esthetician guide you as to which peel is appropriate for your skin type and concerns.",,,11,0,0,,"60 mins",$105,,0,,1,1,new,16
+17,"Express Facial","Includes cleansing, exfoliation, and treatment mask specific to your skin needs, followed by a toner and moisturizer.",,,11,0,0,,"30 mins",$65,,0,,1,1,new,17
+18,"Hydro Dermabrasion Facial","A cosmetic treatment that uses a device to exfoliate the skin and remove dead skin cells. It combines the use of a special handpiece that sprays a fine mist of water and a mild exfoliating solution onto the skin and specialized vacuum suction to remove the exfoliated cells and hydrate skin as well as remove age spots, acne scars, eliminate fine lines, oil, and congestion.",,,11,0,0,,"60 mins",$140,,0,,1,1,new,18
+19,"Nano Microneeding","A revolutionary, non-invasive treatment that's designed to restore vibrance and improve your skin texture. Removing fine lines and wrinkles. Uses nanotechnology to create temporary micro-channels on the skin's surface that allow products and nutrients to penetrate into the top layer of skin.",,,11,0,0,,"60 mins",$150,,0,,1,1,new,19
+20,"Back Facial","This treatment benefits dry, dehydrated, or acne-prone skin. A deep pore cleansing and exfoliation with steam, extractions, and a therapeutic masque smooth and hydrate your skin.",,,11,0,0,,"45 mins",$85,,0,,1,1,new,20
+21,"Herbal Acne Facial","<b>Saturday and Sunday appointment only</b> <br> Focused on finding your custom acne solution, whether it's targeting the occasional hormonal breakouts or clearing a long history of acne-prone skin. Using our natural herbal ingredients with no side effects and gentle to acne skin. Deep cleaning and extraction follow with high frequency and Celluma LED light therapy to destroy acne-causing bacteria.",,,11,0,0,,"45 min",$95,,0,,1,1,new,21
+,,,,,,,,,"90 mins",$135,,0,,2,,,22,
+22,"Celluma Treatment Add-on's","Customized cleanse and exfoliation with a 30-minute<br>
+Celluma treatment followed by a serum and moisturizer.
+",,,11,0,0,,"45 mins",$75,,0,,1,1,new,22
+23,Waxing," ",,,0,0,0,,Lips,$11,,0,,1,1,new,23
+,,,,,,,,,Brows,$15,,0,,2,,,24,
+,,,,,,,,,Chin,$11,,0,,3,,,25,
+,,,,,,,,,"Lips & Chin",$18,,0,,4,,,26,
+,,,,,,,,,"Brows, Lips & Chin",$28,,0,,5,,,27,
+,,,,,,,,,"Sides of Face",$23,,0,,6,,,28,
+24,"Mask Add-on's",,,,0,0,0,,"Gold Collagen Mask",$15,"Helps stimulate the skin's electromagnetic field, and nourish and repair damaged cells. Improves elasticity and diminishes wrinkles.",0,,1,1,new,24
+25,"SPA PACKAGES","<b>This skin treatment is designed to be implemented in conjunction with the appropriate Jan Marini skin research homecare program to prepare the skin for better results while preventing possible risks*</b>",,,0,0,0,,,,,,,,1,new
+26,"Our Signature Facial and Swedish Massage",,,,25,0,0,,"2 hours",$180,,0,,1,1,new,26
+27,"Deep Tissue Massage and our Signature Facial",,,,25,0,0,,"2 hours",$215,,0,,1,1,new,27
+28,"Cloud 9 Glow Facial combined with a Warm Stone Massage",,,,25,0,0,,"2 hours & 15 mins",$225,,0,,1,1,new,28
+,,,,,,,,,"1/2 hour Express Facial and 1/2 hour Massage",$120,,0,,2,,,29,
+29,"Relaxation & Healing Rituals",,,,0,0,0,,"Basic Scalp Treatment - 45 mins",$80,"Treat yourself to a rejuvenating 45-minute treatment designed to revitalize the scalp, encourage healthy hair growth, and provide stress relief. Our skilled practitioners utilize invigorating scalp massage techniques, paired with a tailored blend of nourishing products, to purify, hydrate, and balance the scalp, finishing in a soothing waterfall therapy, leaving you feeling refreshed and rejuvenated.",0,,1,1,new,29
+,,,,,,,,,"Deep Scalp Treatment - 60 min",$130,"Enjoy a 60-minute ultimate relaxation experience, featuring a comprehensive scalp analysis, aromatherapy, and express facial. Our expert practitioners employ advanced scalp massage techniques and tools to stimulate blood flow, promote hair growth, and reduce stress. Paired with a customized blend of nourishing products, our treatment purifies, hydrates, and balances the scalp, finishing in a soothing neck, shoulder, arm, and hand massage, as well as calming waterfall therapy, leaving you refreshed and rejuvenated.",0,,2,,,30,
+,,,,,,,,,"The Cloud 9 Deluxe Scalp with Customized Jan Marini Facial - 90 min",$170,"Treat yourself to the ultimate relaxation experience with our luxurious 90-minute treatment, featuring a comprehensive scalp and facial analysis, aromatherapy, and a customized Jan Marini facial or any facial tailored to address specific skin concerns. Our expert practitioners utilize advanced scalp massage techniques and tools to stimulate blood flow, promote hair growth, and reduce stress. Paired with a customized blend of nourishing products, our treatment detoxifies, exfoliates, and balances the scalp, finishing in a soothing neck, shoulder, arms, and hands massage, as well as calming waterfall therapy, leaving you refreshed and rejuvenated.h
+
+",0,,3,,,31,
+,,,,,,,,,"Manual Lymphatic Drainage - 60 min",$130,"Using light, rhythmic, stretching movements. This type of massage stimulates lymph nodes and numerous lymphatic channels. Moving stagnant lymph fluid and cellular waste through the system to detox the body.",0,,4,,,32,
+,,,,,,,,,"Add on to any massage for 30 min",$65,,0,,5,,,33,
+

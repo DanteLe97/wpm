@@ -1,0 +1,902 @@
+/* MAC Referral Admin Styles */
+#mac-referral-do-bulk-action {
+    margin-left: 10px;
+}
+.mac-referral-wrap {
+    margin-top: 20px;
+}
+
+.mac-referral-list {
+    margin-top: 20px;
+}
+
+.mac-referral-list table {
+    margin-top: 0;
+}
+
+.mac-referral-list .point-display {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 14px;
+    min-width: 50px;
+}
+
+.mac-referral-list .point-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mac-referral-list .point-control input {
+    width: 80px;
+    padding: 4px 8px;
+}
+
+.mac-referral-list .point-control button {
+    margin: 0;
+    min-width: 35px;
+}
+
+.mac-referral-list .point-control .point-add-btn,
+.mac-referral-list .point-control .point-subtract-btn {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1;
+    padding: 4px 8px 6px 8px;
+}
+.button.point-cancel-btn {
+    background-color: #d63638;
+    color: #fff;
+    border-color: #d63638;
+}
+/* Modal Styles */
+.mac-referral-modal {
+    position: fixed;
+    z-index: 100000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.mac-referral-modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.3s;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.mac-referral-modal-header {
+    padding: 20px;
+    background-color: #ff5c02;
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mac-referral-modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.mac-referral-modal-close {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 0;
+    transition: opacity 0.2s;
+    background: none;
+    border: none;
+}
+
+.mac-referral-modal-close:hover,
+.mac-referral-modal-close:focus {
+    opacity: 0.7;
+}
+
+.mac-referral-modal-body {
+    padding: 20px;
+}
+
+.mac-referral-modal-body .form-table {
+    margin-top: 0;
+}
+
+.mac-referral-modal-body .form-table th {
+    width: 180px;
+    padding: 15px 10px 15px 0;
+}
+
+.mac-referral-modal-body .form-table td {
+    padding: 15px 10px;
+}
+
+.mac-referral-modal-body .required {
+    color: #dc3232;
+}
+
+.mac-referral-modal-body .description {
+    margin-top: 5px;
+    color: #646970;
+    font-size: 13px;
+}
+
+.mac-referral-modal-body .submit {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #dcdcde;
+}
+
+.mac-referral-modal-body .submit button {
+    margin-right: 10px;
+}
+
+.mac-referral-modal-body .submit button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Referral Link Styles */
+.mac-referral-referral-link {
+    color: #ff5c02;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.mac-referral-referral-link:hover {
+    color: #135e96;
+}
+
+/* Search Form Styles */
+.mac-referral-search {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+}
+
+/* Bulk Actions Styles */
+.mac-referral-wrap .tablenav {
+    margin: 10px 0;
+    padding: 10px 0;
+    overflow: hidden;
+    clear: both;
+}
+
+.mac-referral-wrap .tablenav.top {
+    border-bottom: 1px solid #dcdcde;
+}
+
+.mac-referral-wrap .tablenav.bottom {
+    border-top: 1px solid #dcdcde;
+    margin-top: 10px;
+}
+
+.mac-referral-wrap .tablenav::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.mac-referral-wrap .bulkactions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Tablenav Pages Styles - Pagination */
+.mac-referral-wrap .tablenav-pages {
+    float: right;
+    margin: 0;
+    text-align: right;
+    font-size: 16px;
+}
+
+.mac-referral-wrap .tablenav-pages .displaying-num {
+    margin-right: 10px;
+    color: #646970;
+    font-size: 13px;
+}
+
+.mac-referral-wrap .tablenav-pages .pagination-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mac-referral-wrap .tablenav-pages a {
+    display: inline-block;
+    padding: 4px 8px;
+    text-decoration: none;
+    border: 1px solid #dcdcde;
+    background: #fff;
+    color: #ff5c02;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    min-width: 15px;
+    text-align: center;
+    line-height: 1;
+}
+
+.mac-referral-wrap .tablenav-pages a:hover {
+    background: #f0f0f1;
+    border-color: #8c8f94;
+    color: #135e96;
+}
+
+.mac-referral-wrap .tablenav-pages a:focus {
+    box-shadow: 0 0 0 1px #ff5c02;
+    outline: none;
+}
+
+.mac-referral-wrap .tablenav-pages .tablenav-pages-navspan {
+    display: inline-block;
+    padding: 4px 8px;
+    color: #c3c4c7;
+    border: 1px solid #dcdcde;
+    background: #f6f7f7;
+    border-radius: 3px;
+    min-width: 10px;
+    min-height: 14px;
+    text-align: center;
+    line-height: 1
+}
+
+.mac-referral-wrap .tablenav-pages .paging-input {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mac-referral-wrap .tablenav-pages .paging-input .current-page {
+    display: inline-block;
+    min-width: 20px;
+    padding: 0 5px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1d2327;
+    line-height: 1.5;
+}
+
+.mac-referral-wrap .tablenav-pages .tablenav-paging-text {
+    color: #646970;
+    font-size: 13px;
+}
+
+.mac-referral-wrap .tablenav-pages .screen-reader-text {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Align actions trong tablenav */
+.mac-referral-wrap .tablenav .alignleft {
+    float: left;
+}
+
+.mac-referral-wrap .tablenav .alignleft.actions {
+    margin-right: 10px;
+}
+
+.mac-referral-wrap .tablenav .alignleft.actions:not(:last-child) {
+    margin-right: 20px;
+}
+
+.mac-referral-wrap .bulkactions select,
+.mac-referral-wrap .bulkactions button {
+    margin: 0;
+}
+
+.mac-referral-wrap .check-column {
+    width: 40px;
+    padding: 8px;
+}
+
+/* Quick Action Styles */
+.mac-referral-quick-action {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* Quick Modal Result Styles */
+#mac-referral-quick-result table.form-table {
+    margin: 0;
+}
+
+#mac-referral-quick-result table.form-table th {
+    width: 150px;
+    padding: 8px 10px 8px 0;
+    font-weight: 600;
+}
+
+#mac-referral-quick-result table.form-table td {
+    padding: 8px 10px;
+}
+
+#mac-referral-quick-result h4 {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ff5c02;
+}
+
+#mac-referral-quick-error {
+    border-left: 4px solid #dc3232;
+}
+
+#mac-referral-confirm-add-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Notification Popup Styles */
+#mac-referral-notification-container {
+    position: fixed;
+    top: 32px;
+    right: 20px;
+    z-index: 100001;
+    max-width: 400px;
+}
+
+.mac-referral-notification {
+    background: #fff;
+    border-left: 4px solid #46b450;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    opacity: 0;
+    transform: translateX(400px);
+    transition: all 0.3s ease;
+    position: relative;
+    min-width: 300px;
+}
+
+.mac-referral-notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mac-referral-notification.notice-success {
+    border-left-color: #46b450;
+}
+
+.mac-referral-notification.notice-error {
+    border-left-color: #dc3232;
+}
+
+.mac-referral-notification.notice-error::before {
+    content: "✕";
+    color: #dc3232;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.mac-referral-notification.notice-success::before {
+    content: "✓";
+    color: #46b450;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* Ẩn các notices từ plugin khác trên trang mac-referral */
+.mac-referral-wrap ~ .notice:not([class*="mac-referral"]),
+.mac-referral-wrap ~ .updated:not([class*="mac-referral"]),
+.mac-referral-wrap ~ .error:not([class*="mac-referral"]) {
+    display: none !important;
+}
+
+/* Chỉ hiển thị notices của plugin này */
+body.toplevel_page_mac-referral .notice:not([id*="mac_referral"]):not(.is-dismissible),
+body.toplevel_page_mac-referral .updated:not([id*="mac_referral"]):not(.is-dismissible),
+body.toplevel_page_mac-referral .error:not([id*="mac_referral"]):not(.is-dismissible) {
+    display: none !important;
+}
+
+/* Responsive - General */
+@media screen and (max-width: 782px) {
+    .mac-referral-modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .mac-referral-modal-body .form-table th,
+    .mac-referral-modal-body .form-table td {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+    .mac-referral-list .point-control {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .mac-referral-list .point-control input {
+        width: 100%;
+    }
+    
+    /* Responsive pagination */
+    .mac-referral-wrap .tablenav-pages {
+        float: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .mac-referral-wrap .tablenav-pages .displaying-num {
+        display: block;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+    
+    .mac-referral-wrap .tablenav-pages .pagination-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .mac-referral-wrap .tablenav .alignleft {
+        float: none;
+        margin-bottom: 10px;
+    }
+    
+    .mac-referral-wrap .tablenav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Ensure table wrapper doesn't break layout */
+    .mac-referral-table-wrapper {
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+}
+
+#wpfooter {
+    display: none;
+}
+
+/* Phone Referral Message Styles */
+#phone-referral-message {
+    padding: 8px 12px;
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+#phone-referral-message.phone-referral-success {
+    background-color: #d4edda;
+    border-left: 4px solid #46b450;
+    color: #155724;
+}
+
+#phone-referral-message.phone-referral-error {
+    background-color: #f8d7da;
+    border-left: 4px solid #dc3232;
+    color: #721c24;
+}
+
+/* Phone and Email Message Styles */
+#phone-message,
+#email-message {
+    padding: 8px 12px;
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+#phone-message.phone-message-error,
+#email-message.email-message-error {
+    background-color: #f8d7da;
+    border-left: 4px solid #dc3232;
+    color: #721c24;
+}
+
+#phone-message.phone-message-success,
+#email-message.email-message-success {
+    background-color: #d4edda;
+    border-left: 4px solid #46b450;
+    color: #155724;
+}
+.mac-referral-quick-form-input input{
+    width: 70%;
+}
+.mac-referral-quick-form-input button{
+    width: 30%;
+}
+#mac-referral-quick-form .form-table td {
+    padding: 0;
+}
+#mac-referral-quick-form label[for="quick_phone_referral_input"] {
+    margin-bottom: 10px;
+    display: block;
+}
+.flex-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* History Modal Styles */
+.history-logs-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.history-log-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+}
+
+.history-log-item:last-child {
+    border-bottom: none;
+}
+
+.history-log-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.history-log-date {
+    color: #646970;
+    font-size: 13px;
+}
+
+.history-log-user {
+    color: #646970;
+    font-size: 13px;
+    margin-left: auto;
+}
+
+.history-log-details {
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.history-log-details ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.history-log-details li {
+    margin: 5px 0;
+}
+
+/* Action Badge Styles */
+.action-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.action-badge-success {
+    background-color: #00a32a;
+    color: white;
+}
+
+.action-badge-info {
+    background-color: #2271b1;
+    color: white;
+}
+
+.action-badge-danger {
+    background-color: #d63638;
+    color: white;
+}
+
+.action-badge-warning {
+    background-color: #dba617;
+    color: white;
+}
+
+.action-badge-default {
+    background-color: #646970;
+    color: white;
+}
+
+/* Logs Page Styles */
+.mac-referral-filters {
+    margin: 20px 0;
+}
+
+.mac-referral-filters .search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.mac-referral-filters .search-box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mac-referral-filters .actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.per-page-form {
+    float: right;
+    margin: 10px 0;
+}
+
+.per-page-form label {
+    margin-right: 5px;
+}
+
+.column-details a.view-changes-link {
+    color: #2271b1;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.column-details a.view-changes-link:hover,
+.column-details a.view-log-details-link:hover {
+    color: #135e96;
+}
+
+/* Log Details Styles */
+.log-details-wrapper {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.log-details-header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.log-details-content {
+    margin-top: 20px;
+}
+
+.log-details-content h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #23282d;
+}
+
+.log-details-content h4 {
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #50575e;
+}
+
+.log-details-content pre {
+    font-size: 12px;
+    line-height: 1.5;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.log-details-content .form-table {
+    margin-top: 10px;
+}
+
+.log-details-content .form-table th {
+    width: 150px;
+    font-weight: 600;
+}
+
+.referral-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.referral-actions button {
+    margin: 0;
+}
+
+/* Responsive Table Styles */
+.mac-referral-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 0;
+    width: 100%;
+    position: relative;
+}
+
+.mac-referral-table-wrapper table {
+    margin: 0;
+    width: 100%;
+    min-width: 1000px;
+    table-layout: auto;
+}
+
+/* Sticky Actions Column */
+.tb-actions-sticky thead th.column-actions,
+.tb-actions-sticky tbody td.column-actions {
+    position: sticky;
+    right: 0;
+    z-index: 10;
+    background-color: #fff;
+    box-shadow: inset -1px 0 0 #dee2e6;
+    white-space: nowrap;
+}
+
+/* Sticky column background for striped rows */
+.tb-actions-sticky tbody tr:nth-child(even) td.column-actions {
+    background-color: #fff;
+}
+
+.tb-actions-sticky tbody tr:nth-child(odd) td.column-actions {
+    background-color: #f9f9f9;
+}
+
+/* Ensure header sticky column has proper background */
+.tb-actions-sticky thead th.column-actions {
+    /* background-color: #f1f1f1; */
+    z-index: 11;
+}
+
+/* Fix table cell overflow */
+.tb-actions-sticky thead th,
+.tb-actions-sticky tbody td {
+    overflow: visible;
+    vertical-align: middle;
+}
+
+/* Ensure table doesn't break container */
+.mac-referral-table-wrapper {
+    box-sizing: border-box;
+}
+
+.mac-referral-table-wrapper table {
+    border-collapse: collapse;
+}
+
+.tb-actions-sticky thead th:not(.column-actions),
+.tb-actions-sticky tbody td:not(.column-actions) {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 1400px) {
+    .mac-referral-table-wrapper table {
+        min-width: 900px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .mac-referral-table-wrapper {
+        margin-left: -10px;
+        margin-right: -10px;
+        padding: 0 10px;
+    }
+    
+    .mac-referral-table-wrapper table {
+        font-size: 13px;
+        min-width: 850px;
+    }
+    
+    .referral-actions {
+        flex-direction: column;
+        gap: 3px;
+        min-width: 120px;
+    }
+    
+    .referral-actions button {
+        width: 100%;
+        font-size: 11px;
+        padding: 4px 8px;
+        white-space: nowrap;
+    }
+    
+    .tb-actions-sticky thead th,
+    .tb-actions-sticky tbody td {
+        padding: 8px 6px;
+    }
+}
+
+@media screen and (max-width: 782px) {
+    .mac-referral-table-wrapper {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding: 0 20px;
+    }
+    
+    .mac-referral-table-wrapper table {
+        font-size: 12px;
+        min-width: 750px;
+    }
+    
+    .tb-actions-sticky thead th,
+    .tb-actions-sticky tbody td {
+        padding: 6px 4px;
+    }
+    
+    .tb-actions-sticky thead th:not(.column-actions),
+    .tb-actions-sticky tbody td:not(.column-actions) {
+        max-width: 150px;
+    }
+    
+    .referral-actions {
+        min-width: 100px;
+    }
+    
+    .referral-actions button {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .mac-referral-table-wrapper {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding: 0 15px;
+    }
+    
+    .mac-referral-table-wrapper table {
+        font-size: 11px;
+        min-width: 700px;
+    }
+    
+    .tb-actions-sticky thead th,
+    .tb-actions-sticky tbody td {
+        padding: 5px 3px;
+    }
+    
+    .referral-actions {
+        gap: 2px;
+        min-width: 90px;
+    }
+    
+    .referral-actions button {
+        font-size: 9px;
+        padding: 2px 4px;
+    }
+}

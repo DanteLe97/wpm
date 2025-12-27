@@ -1,0 +1,690 @@
+/* Activity Log Styles */
+
+.action-type {
+    padding: 4px 6px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.mac-activity-log-table .column-action,
+.mac-activity-log-table .column-date  {
+    width : 120px;
+}
+.mac-activity-log-table .column-error {
+    width : 340px;
+}
+.mac-activity-log-table .column-description {
+    width : 900px;
+    max-width: 900px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Desktop small (1281px - 1440px) */
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
+    .mac-activity-log-table .column-description {
+        width: 600px !important;
+        max-width: 600px !important;
+    }
+    
+    .mac-activity-log-table .column-date {
+        width: 140px !important;
+    }
+    
+    .mac-activity-log-table .column-action {
+        width: 120px !important;
+    }
+    
+    .mac-activity-log-table .column-records {
+        width: 80px !important;
+    }
+    
+    .mac-activity-log-table .column-user {
+        width: 120px !important;
+    }
+    
+    .mac-activity-log-table .column-actions {
+        width: 100px !important;
+    }
+}
+
+/* Đảm bảo table không bị phá vỡ layout */
+.mac-activity-log-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.mac-activity-log-table td.column-description {
+    max-width: 900px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Xử lý các phần tử bên trong description */
+.mac-activity-log-table .column-description * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+/* Xử lý pre tags và code blocks */
+.mac-activity-log-table .column-description pre,
+.mac-activity-log-table .column-description code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* Xử lý các span dài */
+.mac-activity-log-table .column-description span {
+    display: inline-block;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Xử lý div trong description */
+.mac-activity-log-table .column-description div {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+.action-import_replace {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.action-import_append {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.action-settings_update {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.action-crm_error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.action-import_error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.action-plugin_activate {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.action-plugin_deactivate {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.action-plugin_update {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.action-category_update {
+    background-color: #ffc107;
+    color: #856404;
+    font-weight: bold;
+}
+
+.action-category_create {
+    background-color: #28a745;
+    color: #ffffff ;
+    font-weight: bold;
+}
+
+ .action-category_delete {
+     background-color: #dc3545;
+     color: #ffffff;
+     font-weight: bold;
+ }
+ 
+ .action-category_restore {
+     background: linear-gradient(135deg, #17a2b8, #138496) !important;
+     color: #ffffff !important;
+     border: 2px solid #0c5460 !important;
+     font-weight: bold !important;
+     text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+     box-shadow: 0 3px 6px rgba(23, 162, 184, 0.4) !important;
+ }
+ 
+ /* CSS for all possible action types */
+ .action-type[class*="action-"] {
+     background-color: #6c757d !important;
+     color: #ffffff !important;
+     font-weight: bold !important;
+ }
+ 
+ /* Specific overrides */
+ .action-category_update,
+ .action-update {
+     background: linear-gradient(135deg, #ffc107, #ff8c00) !important;
+     color: #856404 !important;
+     text-shadow: 0 1px 2px rgba(0,0,0,0.2) !important;
+     box-shadow: 0 3px 6px rgba(255, 193, 7, 0.4) !important;
+ }
+ 
+ .action-category_restore,
+ .action-restore {
+     background: linear-gradient(135deg, #17a2b8, #138496) !important;
+     color: #ffffff !important;
+     border: 2px solid #0c5460 !important;
+     text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+     box-shadow: 0 3px 6px rgba(23, 162, 184, 0.4) !important;
+ }
+ 
+ .action-category_create,
+ .action-create {
+     background: linear-gradient(135deg, #28a745, #1e7e34) !important;
+     color: #ffffff !important;
+     text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+     box-shadow: 0 3px 6px rgba(40, 167, 69, 0.4) !important;
+ }
+ 
+ .action-category_delete,
+ .action-delete {
+     background: linear-gradient(135deg, #dc3545, #c82333) !important;
+     color: #ffffff !important;
+     text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+     box-shadow: 0 3px 6px rgba(220, 53, 69, 0.4) !important;
+ }
+
+.error-message {
+    color: #dc3545;
+    font-style: italic;
+}
+
+.data-comparison {
+    display: flex;
+    gap: 20px;
+    margin: 10px 0;
+}
+
+.old-data, .new-data {
+    flex: 1;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.old-data {
+    background-color: #f8f9fa;
+    border-left: 3px solid #999;
+}
+
+.new-data {
+    background-color: #fff3cd;
+    border-left: 3px solid #d32f2f;
+}
+
+.old-data strong, .new-data strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+ .old-data span, .new-data span {
+     display: block;
+     margin-bottom: 4px;
+     word-break: break-word;
+ }
+ 
+ .action-description {
+     position: relative;
+ }
+ 
+ .action-description::before {
+     content: '';
+     position: absolute;
+     left: -20px;
+     top: 50%;
+     transform: translateY(-50%);
+     width: 12px;
+     height: 12px;
+     border-radius: 50%;
+     border: 2px solid;
+ }
+ 
+ .action-description[data-action="category_update"]::before {
+     background-color: #ffc107;
+     border-color: #ff8c00;
+ }
+ 
+ .action-description[data-action="category_restore"]::before {
+     background-color: #17a2b8;
+     border-color: #138496;
+ }
+ 
+ .action-description[data-action="category_create"]::before {
+     background-color: #28a745;
+     border-color: #1e7e34;
+ }
+ 
+ .action-description[data-action="category_delete"]::before {
+     background-color: #dc3545;
+     border-color: #c82333;
+ }
+ 
+ .restore-indicator {
+     background: linear-gradient(135deg, #d1ecf1, #bee5eb);
+     border: 1px solid #17a2b8;
+     border-radius: 6px;
+     padding: 12px;
+     margin: 8px 0;
+     position: relative;
+ }
+ 
+ .restore-indicator::before {
+     content: '';
+     position: absolute;
+     left: -8px;
+     top: 50%;
+     transform: translateY(-50%);
+     width: 4px;
+     height: 100%;
+     background: #17a2b8;
+     border-radius: 2px;
+ }
+ 
+ .restore-icon {
+     font-size: 16px;
+     margin-right: 8px;
+     animation: rotate 2s linear infinite;
+ }
+ 
+ @keyframes rotate {
+     from { transform: rotate(0deg); }
+     to { transform: rotate(360deg); }
+ }
+
+.desc-wrap {
+    max-width: 100%;
+}
+
+.desc-content {
+    max-height: 160px;
+    overflow: hidden;
+    position: relative;
+}
+
+.desc-content.is-collapsed:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+}
+
+.desc-content.is-expanded {
+    max-height: none;
+}
+
+ .toggle-desc {
+     margin-top: 6px;
+ }
+ 
+ .column-restore {
+     width: 80px;
+     text-align: center;
+ }
+ 
+ .no-restore {
+     color: #999;
+     font-style: italic;
+     font-size: 12px;
+ }
+ 
+ .mac-restore-btn {
+     font-size: 11px;
+     padding: 4px 8px;
+     height: auto;
+     line-height: 1.2;
+ }
+ 
+ .mac-restore-btn .dashicons {
+     font-size: 12px;
+     width: 12px;
+     height: 12px;
+ }
+ 
+ .restore-button {
+     background: linear-gradient(135deg, #17a2b8, #138496);
+     color: white;
+     border: none;
+     border-radius: 4px;
+     padding: 6px 6px;
+     font-size: 11px;
+     font-weight: 500;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     box-shadow: 0 2px 4px rgba(23, 162, 184, 0.3);
+ }
+ 
+ .restore-button:hover {
+     background: linear-gradient(135deg, #138496, #117a8b);
+     transform: translateY(-1px);
+     box-shadow: 0 4px 8px rgba(23, 162, 184, 0.4);
+ }
+ 
+ .restore-button:active {
+     transform: translateY(0);
+     box-shadow: 0 2px 4px rgba(23, 162, 184, 0.3);
+ }
+ 
+ #restore-message {
+     background: #d4edda;
+     border: 1px solid #c3e6cb;
+     border-radius: 4px;
+     padding: 12px 15px;
+     margin: 15px 0;
+     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+     animation: slideDown 0.3s ease-out;
+ }
+ 
+ #restore-message p {
+     margin: 0;
+     color: #155724;
+     font-weight: 500;
+ }
+ input[name="date_filter"] {
+    max-height: 30px;
+ }
+
+ @keyframes slideDown {
+     from {
+         opacity: 0;
+         transform: translateY(-10px);
+     }
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 782px) {
+    /* Filter form - stack vertically */
+    .tablenav.top .alignleft.actions form,
+    .tablenav.bottom .alignleft.actions form {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+    
+    .tablenav.top .alignleft.actions form select,
+    .tablenav.top .alignleft.actions form input[type="date"],
+    .tablenav.bottom .alignleft.actions form select,
+    .tablenav.bottom .alignleft.actions form input[type="date"] {
+        width: 100%;
+        margin-right: 0 !important;
+        margin-bottom: 0;
+    }
+    
+    .tablenav.top .alignleft.actions form .button,
+    .tablenav.bottom .alignleft.actions form .button {
+        width: 100%;
+        margin-left: 0 !important;
+        margin-top: 0;
+    }
+    
+    /* Table - convert to card layout on mobile */
+    .mac-activity-log-table {
+        display: block;
+        width: 100%;
+    }
+    
+    .mac-activity-log-table thead {
+        display: none;
+    }
+    
+    .mac-activity-log-table tbody {
+        display: block;
+        width: 100%;
+    }
+    
+    .mac-activity-log-table tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        padding: 12px;
+    }
+    
+    .mac-activity-log-table tbody tr td {
+        display: block;
+        width: 100% !important;
+        padding: 8px 0;
+        border: none;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .mac-activity-log-table tbody tr td:last-child {
+        border-bottom: none;
+    }
+    
+    .mac-activity-log-table tbody tr td:before {
+        content: attr(data-label) ": ";
+        font-weight: bold;
+        display: block;
+        color: #666;
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+    
+    /* Action type badge - smaller on mobile */
+    .action-type {
+        font-size: 10px;
+        padding: 3px 5px;
+        min-width: 60px;
+    }
+    
+    /* Description column - full width on mobile */
+    .mac-activity-log-table .column-description {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    /* Restore button - full width on mobile */
+    .restore-button {
+        width: 100%;
+        padding: 8px;
+        font-size: 12px;
+    }
+    
+    /* Data comparison - stack vertically on mobile */
+    .data-comparison {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .old-data, .new-data {
+        width: 100%;
+    }
+    
+    /* Tablenav - stack vertically */
+    .tablenav.top,
+    .tablenav.bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .tablenav.top .alignleft.actions,
+    .tablenav.bottom .alignleft.actions {
+        width: 100%;
+    }
+    
+    .tablenav-pages {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Pagination links - smaller on mobile */
+    .pagination-links {
+        font-size: 12px;
+    }
+    
+    /* Toggle desc button - full width */
+    .toggle-desc {
+        width: 100%;
+        padding: 8px;
+        margin-top: 8px;
+    }
+    
+    /* Snapshot comparison - responsive */
+    .snapshot-comparison {
+        padding: 10px !important;
+        margin-top: 10px !important;
+    }
+    
+    .snapshot-comparison table {
+        font-size: 11px;
+    }
+    
+    .snapshot-comparison th,
+    .snapshot-comparison td {
+        padding: 4px !important;
+        font-size: 11px;
+    }
+}
+
+/* Tablet styles (783px - 1280px) */
+@media screen and (min-width: 783px) and (max-width: 1280px) {
+    /* Table responsive */
+    .mac-activity-log-table {
+        table-layout: auto;
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+    
+    .mac-activity-log-table thead {
+        display: table-header-group;
+    }
+    
+    .mac-activity-log-table tbody {
+        display: table-row-group;
+    }
+    
+    .mac-activity-log-table tbody tr {
+        display: table-row;
+    }
+    
+    .mac-activity-log-table tbody tr td {
+        display: table-cell;
+        padding: 8px;
+    }
+    
+    .mac-activity-log-table tbody tr td:before {
+        display: none;
+    }
+    
+    /* Column widths for tablet */
+    .mac-activity-log-table .column-date {
+        width: 140px !important;
+        min-width: 140px;
+    }
+    
+    .mac-activity-log-table .column-action {
+        width: 120px !important;
+        min-width: 120px;
+    }
+    
+    .mac-activity-log-table .column-description {
+        max-width: 400px !important;
+        width: 400px !important;
+        min-width: 300px;
+    }
+    
+    .mac-activity-log-table .column-records {
+        width: 80px !important;
+        min-width: 80px;
+    }
+    
+    .mac-activity-log-table .column-user {
+        width: 120px !important;
+        min-width: 120px;
+    }
+    
+    .mac-activity-log-table .column-actions {
+        width: 100px !important;
+        min-width: 100px;
+    }
+    
+    /* Filter form - wrap on tablet */
+    .tablenav.top .alignleft.actions form,
+    .tablenav.bottom .alignleft.actions form {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .tablenav.top .alignleft.actions form select,
+    .tablenav.top .alignleft.actions form input[type="date"],
+    .tablenav.bottom .alignleft.actions form select,
+    .tablenav.bottom .alignleft.actions form input[type="date"] {
+        margin-right: 5px;
+        margin-bottom: 5px;
+        flex: 1 1 auto;
+        min-width: 150px;
+    }
+    
+    .tablenav.top .alignleft.actions form .button,
+    .tablenav.bottom .alignleft.actions form .button {
+        flex: 0 0 auto;
+        margin-left: 5px;
+    }
+    
+    /* Action type badge - adjust size */
+    .action-type {
+        font-size: 10px;
+        padding: 3px 5px;
+        min-width: 70px;
+    }
+    
+    /* Restore button - adjust size */
+    .restore-button {
+        padding: 6px 8px;
+        font-size: 11px;
+    }
+    
+    /* Snapshot comparison - adjust padding */
+    .snapshot-comparison {
+        padding: 12px !important;
+        font-size: 12px;
+    }
+    
+    .snapshot-comparison table {
+        font-size: 11px;
+    }
+    
+    .snapshot-comparison th,
+    .snapshot-comparison td {
+        padding: 5px !important;
+        font-size: 11px;
+    }
+}

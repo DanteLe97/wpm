@@ -1,0 +1,37 @@
+.custom-button-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: none;
+    gap: 8px;
+}
+
+.custom-button {
+    padding: 6px 16px;
+    font-size: 12px !important;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    visibility: visible;
+    transform-origin: center;
+    transition: background-color 0.3s;
+
+}
+
+.custom-button:hover {
+    background-color: #F26212;
+}
+
+.custom-button:focus {
+    background-color: #F26212;
+    outline: 2px solid #FBAE85;
+    outline-offset: 2px;
+}
+
+.custom-button:active {
+    background-color: #D64F0A;
+    transform: translateY(1px);
+} 
