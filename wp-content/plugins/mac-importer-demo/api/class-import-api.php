@@ -464,6 +464,8 @@ class MAC_Importer_Import_API {
             
             // Cập nhật các settings riêng biệt (giống plugin cũ)
             if (isset($settings['system_colors'])) {
+                // Lưu system_colors - giữ nguyên màu 8 ký tự hex (có alpha) nếu có
+                // Không dùng sanitize_hex_color() vì nó chỉ hỗ trợ 6 ký tự
                 update_post_meta($kit_id, '_elementor_system_colors', $settings['system_colors']);
             }
             
@@ -482,7 +484,7 @@ class MAC_Importer_Import_API {
                 array(
                     '_id' => '54f3520',
                     'title' => 'Transparent',
-                    'color' => '#00000000'
+                    'color' => '#00000000' // 8 ký tự hex với alpha = 00 (transparent)
                 )
             );
             
@@ -506,6 +508,8 @@ class MAC_Importer_Import_API {
                     }
                 }
                 
+                // Lưu custom_colors - giữ nguyên màu 8 ký tự hex (có alpha) nếu có
+                // Không dùng sanitize_hex_color() vì nó chỉ hỗ trợ 6 ký tự
                 update_post_meta($kit_id, '_elementor_custom_colors', $merged_colors);
             } else {
                 // Fallback: Use default custom colors if not provided in settings
@@ -1635,8 +1639,72 @@ class MAC_Importer_Import_API {
     /**
      * Download ảnh từ URL external và attach vào WordPress media library
      */
+    /**
+     * Kiểm tra xem URL có phải là placeholder image không
+     * Chỉ check domain patterns, KHÔNG bao gồm unsplash (vì dùng để làm demo)
+     */
+    private static function is_placeholder_image($url) {
+        if (empty($url) || !is_string($url)) {
+            return false;
+        }
+        
+        // Parse URL để lấy host
+        $parsed_url = parse_url($url);
+        if (!isset($parsed_url['host'])) {
+            return false;
+        }
+        
+        $host = strtolower($parsed_url['host']);
+        $path = isset($parsed_url['path']) ? strtolower($parsed_url['path']) : '';
+        
+        // Danh sách placeholder domains (KHÔNG bao gồm unsplash)
+        $placeholder_domains = array(
+            'via.placeholder.com',
+            'placehold.it',
+            'placeholder.com',
+            'dummyimage.com',
+            'loremflickr.com',
+            'placeimg.com',
+            'fakeimg.pl',
+            'placekitten.com',
+            'placebear.com',
+            'picsum.photos', // Lorem Picsum - placeholder service
+            'placehold.co',
+            'holder.js',
+            'place-hold.it',
+            'placehold.jp',
+            'placehold.net',
+            'placeholdr.com',
+            'placeholder.pics',
+            'placeholderimage.com',
+        );
+        
+        // Check domain
+        foreach ($placeholder_domains as $domain) {
+            if (strpos($host, $domain) !== false) {
+                return true;
+            }
+        }
+        
+        // Check URL path patterns (chứa từ khóa placeholder)
+        $placeholder_keywords = array('placeholder', 'dummy', 'default-image', 'sample-image', 'test-image');
+        foreach ($placeholder_keywords as $keyword) {
+            if (stripos($path, $keyword) !== false || stripos($url, $keyword) !== false) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
     private static function download_and_attach_image($image_url, $page_id) {
         if (empty($image_url) || !filter_var($image_url, FILTER_VALIDATE_URL)) {
+            return false;
+        }
+        
+        // Skip placeholder images
+        if (self::is_placeholder_image($image_url)) {
+            error_log("SKIP: Placeholder image detected and skipped: {$image_url}");
             return false;
         }
         
@@ -2053,6 +2121,7 @@ class MAC_Importer_Import_API {
         
         $total_downloaded = 0;
         $total_failed = 0;
+        $total_skipped_placeholder = 0;
         $pages_processed = 0;
         $results = array();
         $downloaded_urls = array(); // Track URLs đã download để skip duplicate
@@ -2073,12 +2142,14 @@ class MAC_Importer_Import_API {
                     'success' => $page_result['success'],
                     'downloaded' => $page_result['downloaded'],
                     'failed' => $page_result['failed'],
+                    'skipped_placeholder' => isset($page_result['skipped_placeholder']) ? $page_result['skipped_placeholder'] : 0,
                     'total' => $page_result['total'],
                     'message' => $page_result['message']
                 );
                 
                 $total_downloaded += $page_result['downloaded'];
                 $total_failed += $page_result['failed'];
+                $total_skipped_placeholder += isset($page_result['skipped_placeholder']) ? $page_result['skipped_placeholder'] : 0;
                 $pages_processed++;
                 
                 // Update downloaded_urls với URLs mới
@@ -2104,12 +2175,18 @@ class MAC_Importer_Import_API {
             }
         }
         
+        $message = "Hoàn tất xử lý {$pages_processed} pages: {$total_downloaded} images downloaded, {$total_failed} failed";
+        if ($total_skipped_placeholder > 0) {
+            $message .= ", {$total_skipped_placeholder} placeholder images đã bỏ qua";
+        }
+        
         return array(
             'success' => true,
-            'message' => "Hoàn tất xử lý {$pages_processed} pages: {$total_downloaded} images downloaded, {$total_failed} failed",
+            'message' => $message,
             'pages_processed' => $pages_processed,
             'total_downloaded' => $total_downloaded,
             'total_failed' => $total_failed,
+            'total_skipped_placeholder' => $total_skipped_placeholder,
             'results' => $results
         );
     }
@@ -2163,10 +2240,11 @@ class MAC_Importer_Import_API {
         
         $downloaded_count = 0;
         $failed_count = 0;
+        $skipped_placeholder_count = 0;
         $total_external = 0;
         $new_downloaded_urls = array();
         
-        // Tìm tất cả external URLs
+        // Tìm tất cả external URLs (đã được filter placeholder trong find_all_external_image_urls)
         $external_urls = self::find_all_external_image_urls($elements);
         $total_external = count($external_urls);
         
@@ -2176,6 +2254,7 @@ class MAC_Importer_Import_API {
                 'message' => 'Không có external images nào cần download',
                 'downloaded' => 0,
                 'failed' => 0,
+                'skipped_placeholder' => 0,
                 'total' => 0,
                 'downloaded_urls' => array()
             );
@@ -2183,6 +2262,13 @@ class MAC_Importer_Import_API {
         
         // Download từng URL và replace trong elements array
         foreach ($external_urls as $url) {
+            // Double check placeholder (phòng trường hợp có URL lọt qua filter)
+            if (self::is_placeholder_image($url)) {
+                $skipped_placeholder_count++;
+                error_log("SKIP: Placeholder image skipped during download: {$url}");
+                continue;
+            }
+            
             // Skip nếu URL đã được download trước đó
             if (in_array($url, $downloaded_urls)) {
                 error_log("SKIP: URL already downloaded: {$url}");
@@ -2218,11 +2304,17 @@ class MAC_Importer_Import_API {
             }
         }
         
+        $message = "Download hoàn tất: {$downloaded_count} thành công, {$failed_count} thất bại";
+        if ($skipped_placeholder_count > 0) {
+            $message .= ", {$skipped_placeholder_count} placeholder images đã bỏ qua";
+        }
+        
         return array(
             'success' => true,
-            'message' => "Download hoàn tất: {$downloaded_count} thành công, {$failed_count} thất bại",
+            'message' => $message,
             'downloaded' => $downloaded_count,
             'failed' => $failed_count,
+            'skipped_placeholder' => $skipped_placeholder_count,
             'total' => $total_external,
             'downloaded_urls' => $new_downloaded_urls
         );
@@ -2265,9 +2357,10 @@ class MAC_Importer_Import_API {
         
         $downloaded_count = 0;
         $failed_count = 0;
+        $skipped_placeholder_count = 0;
         $total_external = 0;
         
-        // Tìm tất cả external URLs
+        // Tìm tất cả external URLs (đã được filter placeholder trong find_all_external_image_urls)
         $external_urls = self::find_all_external_image_urls($elements);
         $total_external = count($external_urls);
         
@@ -2277,12 +2370,20 @@ class MAC_Importer_Import_API {
                 'message' => 'Không có external images nào cần download',
                 'downloaded' => 0,
                 'failed' => 0,
+                'skipped_placeholder' => 0,
                 'total' => 0
             );
         }
         
         // Download từng URL và replace trong elements array
         foreach ($external_urls as $url) {
+            // Double check placeholder (phòng trường hợp có URL lọt qua filter)
+            if (self::is_placeholder_image($url)) {
+                $skipped_placeholder_count++;
+                error_log("SKIP: Placeholder image skipped during download: {$url}");
+                continue;
+            }
+            
             $new_url = self::download_and_attach_image($url, $page_id);
             if ($new_url) {
                 // Replace URL trong elements array (bao gồm background_image fields và CSS)
@@ -2310,11 +2411,17 @@ class MAC_Importer_Import_API {
             }
         }
         
+        $message = "Download hoàn tất: {$downloaded_count} thành công, {$failed_count} thất bại";
+        if ($skipped_placeholder_count > 0) {
+            $message .= ", {$skipped_placeholder_count} placeholder images đã bỏ qua";
+        }
+        
         return array(
             'success' => true,
-            'message' => "Download hoàn tất: {$downloaded_count} thành công, {$failed_count} thất bại",
+            'message' => $message,
             'downloaded' => $downloaded_count,
             'failed' => $failed_count,
+            'skipped_placeholder' => $skipped_placeholder_count,
             'total' => $total_external
         );
     }

@@ -161,13 +161,11 @@
   font-size: 16px;
   color: #333;
 }
-
 #elementor-color-control-panel .panel-header-actions {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-
 #elementor-color-control-panel .copy-url-btn {
   display: flex;
   align-items: center;
@@ -183,29 +181,24 @@
   transition: all 0.2s ease;
   position: relative;
 }
-
 #elementor-color-control-panel .copy-url-btn:hover {
   background: #e8e8e8;
   border-color: #ccc;
 }
-
 #elementor-color-control-panel .copy-url-btn.copied {
   background: #d4edda;
   border-color: #28a745;
   color: #155724;
 }
-
 #elementor-color-control-panel .copy-url-btn .copy-label {
   max-width: 80px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
 #elementor-color-control-panel .copy-url-btn svg {
   flex-shrink: 0;
 }
-
 #elementor-color-control-panel .copy-url-btn .copy-tooltip {
   position: absolute;
   bottom: calc(100% + 8px);
@@ -222,7 +215,6 @@
   transition: all 0.2s ease;
   z-index: 10;
 }
-
 #elementor-color-control-panel .copy-url-btn .copy-tooltip::after {
   content: '';
   position: absolute;
@@ -232,7 +224,6 @@
   border: 5px solid transparent;
   border-top-color: #333;
 }
-
 #elementor-color-control-panel .copy-url-btn.show-tooltip .copy-tooltip {
   opacity: 1;
   visibility: visible;
@@ -356,7 +347,7 @@
 }
 
 #elementor-color-control-panel .download-btn span {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -682,4 +673,21 @@
 /* Ẩn các element khi chưa đăng nhập */
 #elementor-color-control-panel[data-logged-in="0"] .logged-in-only {
   display: none !important;
+}
+
+/**/
+.control-actions.logged-in-only + .control-actions,
+.control-actions.logged-in-only:not(:last-child) {
+	display: inline-flex !important;
+}
+.control-actions.logged-in-only + .control-actions > button,
+.control-actions.logged-in-only:not(:last-child) > button {
+	width: 100% !important;
+	margin-top: 0 !important;
+}
+.control-actions.logged-in-only + .control-actions {
+	padding-left: 0 !important;
+}
+.control-actions.logged-in-only:not(:last-child) {
+	padding-right: 5px !important;
 }

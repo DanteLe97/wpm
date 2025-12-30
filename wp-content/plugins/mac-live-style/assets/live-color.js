@@ -118,19 +118,24 @@ jQuery(document).ready(function($) {
     // Lấy các màu theo thứ tự cố định
     const hexParts = [];
     const keysUsed = [];
+    const colorLengths = []; // Track độ dài của mỗi màu (6 hoặc 8 ký tự)
     
     COLOR_KEY_ORDER.forEach((key, index) => {
       if (colors[key]) {
-        hexParts.push(colors[key].replace('#', '').toUpperCase());
+        const hexValue = colors[key].replace('#', '').toUpperCase();
+        hexParts.push(hexValue);
         keysUsed.push(index);
+        colorLengths.push(hexValue.length); // Lưu độ dài (6 hoặc 8)
       }
     });
     
     // Thêm các key không trong danh sách cố định
     Object.keys(colors).forEach(key => {
       if (!COLOR_KEY_ORDER.includes(key)) {
-        hexParts.push(colors[key].replace('#', '').toUpperCase());
+        const hexValue = colors[key].replace('#', '').toUpperCase();
+        hexParts.push(hexValue);
         keysUsed.push(key); // Giữ nguyên key string cho các key không chuẩn
+        colorLengths.push(hexValue.length); // Lưu độ dài (6 hoặc 8)
       }
     });
     
@@ -144,10 +149,24 @@ jQuery(document).ready(function($) {
     
     // Tạo key mask (dùng bit): 4 key đầu = 4 bits
     const keyMask = keysUsed.filter(k => typeof k === 'number').reduce((mask, idx) => mask | (1 << idx), 0);
-    const keyMaskBase62 = keyMask.toString(36); // base36 cho ngắn gọn
+    const keyMaskBase36 = keyMask.toString(36); // base36 cho ngắn gọn
     
-    // Format: keyMask.encodedColors
-    return `${keyMaskBase62}.${encoded}`;
+    // Tạo length mask: mỗi màu dùng 1 bit (0 = 6 ký tự, 1 = 8 ký tự)
+    // Chỉ track cho các key trong COLOR_KEY_ORDER (có index là number)
+    let lengthMask = 0;
+    let lengthIndex = 0;
+    keysUsed.forEach((k, idx) => {
+      if (typeof k === 'number') {
+        if (colorLengths[idx] === 8) {
+          lengthMask |= (1 << lengthIndex);
+        }
+        lengthIndex++;
+      }
+    });
+    const lengthMaskBase36 = lengthMask.toString(36);
+    
+    // Format: keyMask.lengthMask.encodedColors
+    return `${keyMaskBase36}.${lengthMaskBase36}.${encoded}`;
   }
   
   // Decode chuỗi hash thành colors object
@@ -157,10 +176,51 @@ jQuery(document).ready(function($) {
     }
     
     const parts = hashStr.split('.');
-    if (parts.length < 2) return null;
+    
+    // Format cũ: keyMask.encodedColors (2 parts) - backward compatibility
+    if (parts.length === 2) {
+      const keyMaskBase36 = parts[0];
+      const encoded = parts[1];
+      
+      // Decode key mask
+      const keyMask = parseInt(keyMaskBase36, 36);
+      
+      // Tìm các keys được sử dụng
+      const usedKeys = [];
+      for (let i = 0; i < COLOR_KEY_ORDER.length; i++) {
+        if (keyMask & (1 << i)) {
+          usedKeys.push(COLOR_KEY_ORDER[i]);
+        }
+      }
+      
+      if (usedKeys.length === 0) return null;
+      
+      // Decode Base62 về hex (format cũ: giả định 6 ký tự)
+      const targetLength = usedKeys.length * 6;
+      const fullHex = base62ToHex(encoded, targetLength);
+      
+      if (!fullHex || fullHex.length < targetLength) {
+        return null;
+      }
+      
+      // Split hex thành các màu riêng (6 ký tự)
+      const colors = {};
+      for (let i = 0; i < usedKeys.length; i++) {
+        const hex = fullHex.substring(i * 6, (i + 1) * 6);
+        if (hex.length === 6) {
+          colors[usedKeys[i]] = '#' + hex;
+        }
+      }
+      
+      return colors;
+    }
+    
+    // Format mới: keyMask.lengthMask.encodedColors (3 parts)
+    if (parts.length < 3) return null;
     
     const keyMaskBase36 = parts[0];
-    const encoded = parts[1];
+    const lengthMaskBase36 = parts[1];
+    const encoded = parts[2];
     
     // Decode key mask
     const keyMask = parseInt(keyMaskBase36, 36);
@@ -175,21 +235,35 @@ jQuery(document).ready(function($) {
     
     if (usedKeys.length === 0) return null;
     
-    // Decode Base62 về hex
-    const targetLength = usedKeys.length * 6; // mỗi màu 6 ký tự hex
+    // Decode length mask để biết màu nào có 8 ký tự
+    const lengthMask = parseInt(lengthMaskBase36, 36);
+    const colorLengths = [];
+    for (let i = 0; i < usedKeys.length; i++) {
+      if (lengthMask & (1 << i)) {
+        colorLengths.push(8); // Có alpha
+      } else {
+        colorLengths.push(6); // Không có alpha
+      }
+    }
+    
+    // Tính tổng độ dài hex cần decode
+    const targetLength = colorLengths.reduce((sum, len) => sum + len, 0);
     const fullHex = base62ToHex(encoded, targetLength);
     
     if (!fullHex || fullHex.length < targetLength) {
       return null;
     }
     
-    // Split hex thành các màu riêng
+    // Split hex thành các màu riêng theo độ dài đã track
     const colors = {};
+    let offset = 0;
     for (let i = 0; i < usedKeys.length; i++) {
-      const hex = fullHex.substring(i * 6, (i + 1) * 6);
-      if (hex.length === 6) {
+      const len = colorLengths[i];
+      const hex = fullHex.substring(offset, offset + len);
+      if (hex.length === len) {
         colors[usedKeys[i]] = '#' + hex;
       }
+      offset += len;
     }
     
     return colors;
@@ -205,19 +279,29 @@ jQuery(document).ready(function($) {
       const colorKey = $input.data('color');
       const $field = $input.closest('.clr-field');
       
-      let colorValue = '';
-      const rgb = $field.css('color');
+      // Ưu tiên lấy giá trị trực tiếp từ input để giữ nguyên alpha channel (8 ký tự hex)
+      let colorValue = $input.val() || '';
       
-      if (rgb && /^rgba?/i.test(rgb)) {
-        const m = rgb.match(/rgba?\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/i);
-        if (m) {
-          const toHex = function(n) { return parseInt(n, 10).toString(16).padStart(2, '0'); };
-          colorValue = toHex(m[1]) + toHex(m[2]) + toHex(m[3]);
-        }
+      // Loại bỏ dấu # nếu có
+      if (colorValue.startsWith('#')) {
+        colorValue = colorValue.substring(1);
       }
       
-      if (!colorValue) {
-        colorValue = $input.val().replace('#', '');
+      // Nếu input không có giá trị hoặc giá trị không hợp lệ, mới fallback sang CSS
+      if (!colorValue || !/^[0-9A-Fa-f]{6,8}$/.test(colorValue)) {
+        const rgb = $field.css('color');
+        
+        if (rgb && /^rgba?/i.test(rgb)) {
+          const m = rgb.match(/rgba?\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)(?:\s*,\s*([\d.]+))?/i);
+          if (m) {
+            const toHex = function(n) { return parseInt(n, 10).toString(16).padStart(2, '0'); };
+            const r = toHex(m[1]);
+            const g = toHex(m[2]);
+            const b = toHex(m[3]);
+            const a = m[4] ? toHex(Math.round(parseFloat(m[4]) * 255)) : '';
+            colorValue = r + g + b + a; // Giữ nguyên alpha nếu có
+          }
+        }
       }
       
       if (colorKey && colorValue) {
@@ -478,7 +562,6 @@ jQuery(document).ready(function($) {
             }
           }
         }
-        
         if (dataColor && hex) {
           // Lưu dưới dạng object với _id và title
           colors[dataColor] = {

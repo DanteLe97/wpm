@@ -130,6 +130,13 @@ $mac_core_current_version = defined('MAC_CORE_VERSION') ? MAC_CORE_VERSION : ($m
                                 'slug' => 'mac-role',
                                 'file' => 'mac-role/mac-role.php',
                                 // GitHub functionality removed - using CRM only
+                            ),
+                            'mac-unused-images-scanner' => array(
+                                'name' => 'MAC Unused Images Scanner',
+                                'description' => 'Quét và xóa ảnh không sử dụng trong WordPress với WP-Cron, có tiến trình và bulk delete. Hỗ trợ WebP cleanup.',
+                                'slug' => 'mac-unused-images-scanner',
+                                'file' => 'mac-unused-images-scanner/mac-unused-images-scanner.php',
+                                // GitHub functionality removed - using CRM only
                             )
                         );
 

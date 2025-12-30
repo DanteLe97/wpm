@@ -2,9 +2,6 @@
  * Admin styles for Role URL Dashboard
  */
 
-.rud-admin-wrap {
-	max-width: 1400px;
-}
 
 .rud-page-title {
 	font-size: 28px;
@@ -137,9 +134,17 @@
 	padding: 20px;
 	border: 1px solid #ccd0d4;
 	box-shadow: 0 1px 1px rgba(0,0,0,.04);
-	max-width: 800px;
+	max-width: 100%;
+	display: flex;
+	overflow: visible;
+    align-items: flex-start;
 }
-
+.rud-edit-form .submit{
+	position: sticky;
+	top: 40px;
+	display: flex;
+	gap:10px;
+}
 .rud-edit-form .form-table th {
 	font-size: 16px;
 	font-weight: bold;
@@ -150,7 +155,10 @@
 .rud-edit-form .form-table td {
 	padding: 15px 10px;
 }
-
+.rud-edit-form .form-table select{
+	max-width: 100%;
+	min-width: 150px;
+}
 .rud-edit-form input[type="text"],
 .rud-edit-form input[type="number"],
 .rud-edit-form select,

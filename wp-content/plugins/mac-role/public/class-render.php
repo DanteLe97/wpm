@@ -59,63 +59,57 @@ class RUD_Render {
 		);
 	}
 	
-	/**
-	 * Enqueue scripts for user dashboard
-	 */
-	public function enqueue_scripts( $hook ) {
-		// Hide admin bar CSS for all admin pages (non-admin users)
-		if ( ! current_user_can( 'administrator' ) ) {
-			wp_add_inline_style( 'wp-admin', '#wpadminbar { display: none !important; } body.admin-bar { padding-top: 0 !important; }' );
-		}
-		
-		// Load dashboard styles on dashboard page
-		if ( $hook === 'toplevel_page_role-links-dashboard' ) {
-			wp_enqueue_style(
-				'rud-dashboard',
-				RUD_PLUGIN_URL . 'assets/css/dashboard.css',
-				array(),
-				RUD_VERSION
-			);
-			
-			wp_enqueue_script(
-				'rud-dashboard',
-				RUD_PLUGIN_URL . 'assets/js/dashboard.js',
-				array( 'jquery' ),
-				RUD_VERSION,
-				true
-			);
-			
-			$settings = get_option( 'rud_settings', array( 'allow_iframe' => 0 ) );
-			
-			wp_localize_script( 'rud-dashboard', 'rudDashboard', array(
-				'allowIframe' => isset( $settings['allow_iframe'] ) ? $settings['allow_iframe'] : 0,
-			) );
-		}
-		
-		// Load dashboard styles on index.php for non-admin users
-		if ( $hook === 'index.php' && ! current_user_can( 'manage_options' ) && ! current_user_can( 'manage_role_dashboards' ) ) {
-			wp_enqueue_style(
-				'rud-dashboard',
-				RUD_PLUGIN_URL . 'assets/css/dashboard.css',
-				array(),
-				RUD_VERSION
-			);
-			
-			wp_enqueue_script(
-				'rud-dashboard',
-				RUD_PLUGIN_URL . 'assets/js/dashboard.js',
-				array( 'jquery' ),
-				RUD_VERSION,
-				true
-			);
-			
-			$settings = get_option( 'rud_settings', array( 'allow_iframe' => 0 ) );
-			
-			wp_localize_script( 'rud-dashboard', 'rudDashboard', array(
-				'allowIframe' => isset( $settings['allow_iframe'] ) ? $settings['allow_iframe'] : 0,
-			) );
-		}
-	}
+    /**
+     * Enqueue scripts for user dashboard
+     */
+    public function enqueue_scripts( $hook ) {
+        // Hide admin bar CSS for all admin pages (non-admin users)
+        if ( ! current_user_can( 'administrator' ) ) {
+            wp_add_inline_style( 'wp-admin', '#wpadminbar { display: none !important; } body.admin-bar { padding-top: 0 !important; }' );
+        }
+        
+        // Load dashboard styles on ALL admin pages (for all users - to allow custom CSS)
+        wp_enqueue_style(
+            'rud-dashboard',
+            RUD_PLUGIN_URL . 'assets/css/dashboard.css',
+            array(),
+            RUD_VERSION . '.' . filemtime( RUD_PLUGIN_DIR . 'assets/css/dashboard.css' ) // Add filemtime to prevent cache
+        );
+        
+        // Load dashboard styles on dashboard page
+        if ( $hook === 'toplevel_page_role-links-dashboard' ) {
+            wp_enqueue_script(
+                'rud-dashboard',
+                RUD_PLUGIN_URL . 'assets/js/dashboard.js',
+                array( 'jquery' ),
+                RUD_VERSION,
+                true
+            );
+            
+            $settings = get_option( 'rud_settings', array( 'allow_iframe' => 0 ) );
+            
+            wp_localize_script( 'rud-dashboard', 'rudDashboard', array(
+                'allowIframe' => isset( $settings['allow_iframe'] ) ? $settings['allow_iframe'] : 0,
+            ) );
+        }
+        
+        // Load dashboard styles on index.php for non-admin users
+        if ( $hook === 'index.php' && ! current_user_can( 'manage_options' ) && ! current_user_can( 'manage_role_dashboards' ) ) {
+            wp_enqueue_script(
+                'rud-dashboard',
+                RUD_PLUGIN_URL . 'assets/js/dashboard.js',
+                array( 'jquery' ),
+                RUD_VERSION,
+                true
+            );
+            
+            $settings = get_option( 'rud_settings', array( 'allow_iframe' => 0 ) );
+            
+            wp_localize_script( 'rud-dashboard', 'rudDashboard', array(
+                'allowIframe' => isset( $settings['allow_iframe'] ) ? $settings['allow_iframe'] : 0,
+            ) );
+        }
+    }
 	
 	/**
 	 * Hide admin bar for non-admin users

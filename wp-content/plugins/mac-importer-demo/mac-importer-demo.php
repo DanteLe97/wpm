@@ -2,6 +2,7 @@
 	/*
 	Plugin Name: MAC Importer Demo
 	Plugin URI: https://macusaone.com
+        Version: 1.1.3.3
 	Description: Import Elementor pages and site settings between domains
 	Author: MAC USA One
 	*/

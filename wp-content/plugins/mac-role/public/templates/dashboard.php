@@ -18,13 +18,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	if ( ! $is_dashboard ) : 
 	?>
 	<!-- Breadcrumb -->
-	<div class="rud-breadcrumb" style="margin-bottom: 20px; padding: 10px 0; border-bottom: 1px solid #ddd;">
-		<a href="<?php echo admin_url( 'index.php' ); ?>" 
-		   style="text-decoration: none; color: #ff5c02; font-size: 14px;">
+	<div class="rud-breadcrumb">
+		<a href="<?php echo admin_url( 'index.php' ); ?>">
 			<?php _e( 'Dashboard', 'role-url-dashboard' ); ?>
 		</a>
-		<span style="margin: 0 8px; color: #666;">/</span>
-		<span style="color: #666; font-size: 14px;">
+		<span class="rud-breadcrumb-separator">/</span>
+		<span class="rud-breadcrumb-current">
 			<?php 
 			// Get current page title from WordPress admin menu
 			global $submenu, $menu;
@@ -54,8 +53,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 	<?php endif; ?>
 	
-	<div class="rud-dashboard-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 15px;">
-		<h1 class="rud-dashboard-title" style="font-size: 28px; margin: 0;">
+	<div class="rud-dashboard-header">
+		<h1 class="rud-dashboard-title">
 			<?php _e( 'My Dashboard', 'role-url-dashboard' ); ?>
 		</h1>
 		<?php 
@@ -67,8 +66,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		if ( ! $is_dashboard ) : 
 		?>
 			<a href="<?php echo admin_url( 'index.php' ); ?>" 
-			   class="button button-primary button-large rud-back-dashboard" 
-			   style="font-size: 16px; padding: 12px 24px; text-decoration: none; white-space: nowrap;">
+			   class="button button-primary button-large rud-back-dashboard">
 				<?php _e( '← Quay về Dashboard', 'role-url-dashboard' ); ?>
 			</a>
 		<?php endif; ?>
@@ -83,7 +81,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	if ( $total_items === 0 ) : 
 	?>
 		<div class="rud-empty-state">
-			<p style="font-size: 18px; color: #666;">
+			<p>
 				<?php _e( 'No links available. Please contact your administrator.', 'role-url-dashboard' ); ?>
 			</p>
 		</div>
@@ -108,27 +106,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 				     aria-label="<?php echo esc_attr( $main_mapping['label'] ); ?>">
 					
 					<?php if ( ! empty( $icon ) ) : ?>
-					<div class="rud-tile-icon" style="font-size: 48px; margin-bottom: 15px;">
+					<div class="rud-tile-icon">
 						<?php echo esc_html( $icon ); ?>
 					</div>
 					<?php endif; ?>
 					
-					<h3 class="rud-tile-title" style="font-size: 20px; font-weight: bold; margin: 0 0 10px 0;">
+					<h3 class="rud-tile-title">
 						<?php echo esc_html( $main_mapping['label'] ); ?>
 					</h3>
 					
 					<?php if ( ! empty( $main_mapping['description'] ) ) : ?>
-						<p class="rud-tile-description" style="font-size: 16px; color: #666; margin: 0 0 15px 0;">
+						<p class="rud-tile-description">
 							<?php echo esc_html( $main_mapping['description'] ); ?>
 						</p>
 					<?php endif; ?>
 					
 					<?php if ( ! empty( $submenu_items ) ) : ?>
-						<div class="rud-tile-submenu" style="margin: 15px 0; padding-top: 15px; border-top: 1px solid #e0e0e0; width: 100%;">
-							<div style="font-size: 14px; font-weight: bold; color: #666; margin-bottom: 10px; text-align: left;">
+						<div class="rud-tile-submenu">
+							<div class="rud-submenu-title">
 								<?php _e( 'Submenu:', 'role-url-dashboard' ); ?>
 							</div>
-							<div class="rud-submenu-links" style="display: flex; flex-direction: column; gap: 8px; text-align: left;">
+							<div class="rud-submenu-links">
 								<?php foreach ( $submenu_items as $submenu_item ) : 
 									$submenu_url = RUD_Helpers::get_admin_url( $submenu_item['url'] );
 									$submenu_behavior = $submenu_item['open_behavior'];
@@ -136,8 +134,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 									<a href="<?php echo esc_url( $submenu_url ); ?>" 
 									   class="rud-submenu-link" 
 									   data-url="<?php echo esc_attr( $submenu_url ); ?>"
-									   data-behavior="<?php echo esc_attr( $submenu_behavior ); ?>"
-									   style="display: block; padding: 8px 12px; background: #f5f5f5; border-radius: 4px; text-decoration: none; color: #ff5c02; font-size: 14px; transition: background 0.2s;">
+									   data-behavior="<?php echo esc_attr( $submenu_behavior ); ?>">
 										<?php echo esc_html( $submenu_item['label'] ); ?>
 									</a>
 								<?php endforeach; ?>
@@ -145,8 +142,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</div>
 					<?php endif; ?>
 					
-					<div class="rud-tile-action" style="margin-top: 15px;">
-						<button class="rud-open-button" style="font-size: 16px; padding: 12px 24px; background: #ff5c02; color: white; border: none; border-radius: 4px; cursor: pointer;">
+					<div class="rud-tile-action">
+						<button class="rud-open-button">
 							<?php _e( 'Open', 'role-url-dashboard' ); ?>
 						</button>
 					</div>
@@ -171,27 +168,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 				     aria-label="<?php echo esc_attr( $mapping['label'] ); ?>">
 					
 					<?php if ( ! empty( $icon ) ) : ?>
-					<div class="rud-tile-icon" style="font-size: 48px; margin-bottom: 15px;">
+					<div class="rud-tile-icon">
 						<?php echo esc_html( $icon ); ?>
 					</div>
 					<?php endif; ?>
 					
-					<h3 class="rud-tile-title" style="font-size: 20px; font-weight: bold; margin: 0 0 10px 0;">
+					<h3 class="rud-tile-title">
 						<?php echo esc_html( $mapping['label'] ); ?>
 					</h3>
 					
 					<?php if ( ! empty( $mapping['description'] ) ) : ?>
-						<p class="rud-tile-description" style="font-size: 16px; color: #666; margin: 0;">
+						<p class="rud-tile-description">
 							<?php echo esc_html( $mapping['description'] ); ?>
 						</p>
 					<?php endif; ?>
 					
 					<?php if ( ! empty( $additional_urls ) ) : ?>
-						<div class="rud-tile-submenu" style="margin: 15px 0; padding-top: 15px; border-top: 1px solid #e0e0e0; width: 100%;">
-							<div style="font-size: 14px; font-weight: bold; color: #666; margin-bottom: 10px; text-align: left;">
+						<div class="rud-tile-submenu">
+							<div class="rud-submenu-title">
 								<?php _e( 'Submenu:', 'role-url-dashboard' ); ?>
 							</div>
-							<div class="rud-submenu-links" style="display: flex; flex-direction: column; gap: 8px; text-align: left;">
+							<div class="rud-submenu-links">
 								<?php foreach ( $additional_urls as $add_url ) : 
 									$submenu_url = RUD_Helpers::get_admin_url( $add_url );
 									// Get label from WordPress admin menu
@@ -202,8 +199,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 									<a href="<?php echo esc_url( $submenu_url ); ?>" 
 									   class="rud-submenu-link" 
 									   data-url="<?php echo esc_attr( $submenu_url ); ?>"
-									   data-behavior="<?php echo esc_attr( $data_behavior ); ?>"
-									   style="display: block; padding: 8px 12px; background: #f5f5f5; border-radius: 4px; text-decoration: none; color: #ff5c02; font-size: 14px; transition: background 0.2s;">
+									   data-behavior="<?php echo esc_attr( $data_behavior ); ?>">
 										<?php echo esc_html( $submenu_label ); ?>
 									</a>
 								<?php endforeach; ?>
@@ -211,8 +207,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</div>
 					<?php endif; ?>
 					
-					<div class="rud-tile-action" style="margin-top: 15px;">
-						<button class="rud-open-button" style="font-size: 16px; padding: 12px 24px; background: #ff5c02; color: white; border: none; border-radius: 4px; cursor: pointer;">
+					<div class="rud-tile-action">
+						<button class="rud-open-button">
 							<?php _e( 'Open', 'role-url-dashboard' ); ?>
 						</button>
 					</div>
@@ -223,10 +219,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 
 <?php if ( ! empty( $mappings ) ) : ?>
-	<div id="rud-iframe-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 999999;">
-		<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 1200px; height: 90%; background: white; border-radius: 8px; padding: 20px;">
-			<button id="rud-close-iframe" style="float: right; font-size: 24px; background: none; border: none; cursor: pointer; padding: 5px 15px;">&times;</button>
-			<iframe id="rud-iframe-content" src="" style="width: 100%; height: calc(100% - 40px); border: none; margin-top: 20px;"></iframe>
+	<div id="rud-iframe-modal">
+		<div class="rud-iframe-modal-content">
+			<button id="rud-close-iframe">&times;</button>
+			<iframe id="rud-iframe-content" src=""></iframe>
 		</div>
 	</div>
 <?php endif; ?>

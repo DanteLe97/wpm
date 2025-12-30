@@ -183,7 +183,8 @@ class Admin {
             'mac-importer-demo' => array('file' => 'mac-importer-demo/mac-importer-demo.php'),
             'mac-seasonal-effects' => array('file' => 'mac-seasonal-effects/mac-seasonal-effects.php'),
             'mac-interactive-tutorials' => array('file' => 'mac-interactive-tutorials/mac-interactive-tutorials.php'),
-            'mac-role' => array('file' => 'mac-role/mac-role.php')
+            'mac-role' => array('file' => 'mac-role/mac-role.php'),
+            'mac-unused-images-scanner' => array('file' => 'mac-unused-images-scanner/mac-unused-images-scanner.php')
         );
         
         if (isset($mac_core_addons[$addon_slug])) {
@@ -221,7 +222,8 @@ class Admin {
             'mac-importer-demo' => array('file' => 'mac-importer-demo/mac-importer-demo.php'),
             'mac-seasonal-effects' => array('file' => 'mac-seasonal-effects/mac-seasonal-effects.php'),
             'mac-interactive-tutorials' => array('file' => 'mac-interactive-tutorials/mac-interactive-tutorials.php'),
-            'mac-role' => array('file' => 'mac-role/mac-role.php')
+            'mac-role' => array('file' => 'mac-role/mac-role.php'),
+            'mac-unused-images-scanner' => array('file' => 'mac-unused-images-scanner/mac-unused-images-scanner.php')
         );
         
         if (isset($mac_core_addons[$addon_slug])) {

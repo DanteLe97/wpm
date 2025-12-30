@@ -486,10 +486,11 @@ class MAC_Importer_Export_API {
             }
             
             if ($is_system_color) {
+                // Giữ nguyên màu 8 ký tự hex (có alpha) nếu có - không cắt bớt
                 $system_colors[] = array(
                     '_id' => $key,
                     'title' => $color_mapping[$key],
-                    'color' => $item['color']
+                    'color' => $item['color'] // Có thể là #RRGGBB hoặc #RRGGBBAA
                 );
             } else {
                 // Giữ nguyên cấu trúc gốc cho custom colors - sử dụng _id gốc hoặc mapping từ site-settings.json
@@ -500,12 +501,12 @@ class MAC_Importer_Export_API {
                     $title = isset($item['title']) ? $item['title'] : (isset($item['name']) ? $item['name'] : 'Custom');
                     $color = $item['color'];
                     
-                    // Mapping dựa trên title và color
-                    if (strtolower($title) === 'black' && $color === '#000000') {
+                    // Mapping dựa trên title và color (hỗ trợ cả 6 và 8 ký tự hex)
+                    if (strtolower($title) === 'black' && ($color === '#000000' || $color === '#000000ff')) {
                         $custom_id = '575bd41';
-                    } elseif (strtolower($title) === 'white' && $color === '#ffffff') {
+                    } elseif (strtolower($title) === 'white' && ($color === '#ffffff' || $color === '#ffffffff')) {
                         $custom_id = '041be46';
-                    } elseif (strtolower($title) === 'transparent' && $color === '#00000000') {
+                    } elseif (strtolower($title) === 'transparent' && (preg_match('/^#[0-9A-Fa-f]{8}$/', $color) && substr($color, -2) === '00')) {
                         $custom_id = '54f3520';
                     } else {
                         // Fallback: tạo từ title + color
@@ -513,10 +514,11 @@ class MAC_Importer_Export_API {
                     }
                 }
                 
+                // Giữ nguyên màu 8 ký tự hex (có alpha) nếu có - không cắt bớt
                 $custom_colors[] = array(
                     '_id' => $custom_id,
                     'title' => isset($item['title']) ? $item['title'] : (isset($item['name']) ? $item['name'] : 'Custom Color'),
-                    'color' => $item['color']
+                    'color' => $item['color'] // Có thể là #RRGGBB hoặc #RRGGBBAA
                 );
             }
         }

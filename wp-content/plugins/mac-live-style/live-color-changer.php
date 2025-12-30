@@ -2,10 +2,10 @@
 
 /**
  * Plugin Name: MAC LiveStyle
- * Plugin URI: https://yourwebsite.com
+ * Plugin URI: https://macusaone.com
  * Description: Thay đổi màu sắc & font chữ trực tiếp trên frontend
  * Version: 1.1.1
- * Author: mac-marketing
+ * Author: macusaone
  * License: GPL v2 or later
  * Text Domain: elementor-live-color
  */
